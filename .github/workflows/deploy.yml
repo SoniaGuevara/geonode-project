@@ -1,0 +1,20 @@
+name: Deploy GeoNode
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Build y redeploy contenedores
+        working-directory: /home/geonode5_docker/mi_geonode
+        run: |
+          git pull origin master
+          docker compose up --build -d
+          docker compose ps
