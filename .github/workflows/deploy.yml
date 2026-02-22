@@ -11,10 +11,51 @@ jobs:
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
-      - name: Build y redeploy contenedores
+      - name: Detectar archivos cambiados
+        id: changes
         working-directory: /home/geonode5_docker/mi_geonode
         run: |
           git pull origin master
+          CHANGED=$(git diff --name-only HEAD~1 HEAD)
+          echo "Archivos modificados:"
+          echo "$CHANGED"
+
+          # Detectar tipo de cambio
+          if echo "$CHANGED" | grep -qE "^Dockerfile|^src/requirements.txt"; then
+            echo "type=full_rebuild" >> $GITHUB_OUTPUT
+          elif echo "$CHANGED" | grep -qE "^docker-compose\.yml|^\.env"; then
+            echo "type=config_change" >> $GITHUB_OUTPUT
+          elif echo "$CHANGED" | grep -qE "^src/geonode_project/templates/|^src/geonode_project/static/"; then
+            echo "type=frontend_change" >> $GITHUB_OUTPUT
+          else
+            echo "type=full_rebuild" >> $GITHUB_OUTPUT
+          fi
+
+      - name: "FRONTEND: Copiar archivos y reiniciar Django"
+        if: steps.changes.outputs.type == 'frontend_change'
+        working-directory: /home/geonode5_docker/mi_geonode
+        run: |
+          echo "Cambio de frontend detectado - deploy rápido"
+          docker compose cp src/geonode_project/templates django:/usr/src/project/geonode_project/
+          docker compose cp src/geonode_project/static django:/usr/src/project/geonode_project/
+          docker compose restart django celery
+          docker compose ps
+
+      - name: "CONFIG: Reiniciar servicios afectados"
+        if: steps.changes.outputs.type == 'config_change'
+        working-directory: /home/geonode5_docker/mi_geonode
+        run: |
+          echo "Cambio de configuración detectado - reiniciando servicios"
+          docker compose up -d --no-build
+          docker compose ps
+
+      - name: "FULL REBUILD: Reconstruir imagen completa"
+        if: steps.changes.outputs.type == 'full_rebuild'
+        working-directory: /home/geonode5_docker/mi_geonode
+        run: |
+          echo "Rebuild completo detectado"
           docker compose up --build -d
           docker compose ps
