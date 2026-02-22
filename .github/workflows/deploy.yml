@@ -40,7 +40,9 @@ jobs:
           echo "Cambio de frontend detectado - deploy rápido"
           docker compose cp src/geonode_project/templates django:/usr/src/project/geonode_project/
           docker compose cp src/geonode_project/static django:/usr/src/project/geonode_project/
-          docker compose restart django celery
+          docker compose restart django
+          sleep 30
+          docker compose restart celery
           docker compose ps
 
       - name: "CONFIG: Reiniciar servicios afectados"
