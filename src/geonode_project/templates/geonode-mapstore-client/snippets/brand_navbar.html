@@ -7,13 +7,13 @@
 
 <nav id="gn-brand-navbar" class="gn-brand-navbar ms-main-colors _padding-md ms-flex-box _flex">
     <div class="ms-flex-fill ms-flex-box _flex _flex-gap-sm _flex-center-v">
+
         {% block logo %}
-            <a href="/" style="display:flex;align-items:center;gap:0.6rem;text-decoration:none;">
+            <a href="/" style="display:flex;align-items:center;text-decoration:none;margin-right:0.5rem;">
                 {% if custom_theme.logo and custom_theme.logo.url %}
-                    <img src="{{ custom_theme.logo.url }}" style="height:36px;">
+                    <img src="{{ custom_theme.logo.url }}" style="height:40px;">
                 {% else %}
-                    <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:#E87722;letter-spacing:0.05em;">CRISOL</span>
-                    <span style="font-family:'Syne',sans-serif;font-weight:400;font-size:1.1rem;color:#8B949E;letter-spacing:0.05em;">UNCUYO</span>
+                    <img src="{% static 'geonode_project/img/logo_crisol.png' %}" style="height:40px;" alt="CRISOL UNCUYO">
                 {% endif %}
             </a>
         {% endblock %}
@@ -79,7 +79,7 @@
                 var signInElement = document.getElementById("sign-in");
                 if (signInElement){
                     if (window.location.pathname === '/account/login/'){
-                        signInElement.setAttribute("href", window.location.href)
+                        signInElement.setAttribute("href", window.location.href);
                     } else {
                         var href = signInElement.getAttribute("href").split("next=")[0];
                         var url_parts = window.location.href.split(window.location.pathname);

@@ -3,174 +3,192 @@
         {{ custom_theme.extra_css }}
     {% endblock %}
 
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@400;600;700;800&display=swap');
 
-    .msgapi .gn-theme {
-        --ms-primary: #E87722;
-        --ms-primary-contrast: #ffffff;
-        --ms-main-color: #E6EDF3;
-        --ms-main-bg: #161B22;
-        --ms-main-border-color: #30363d;
-        --ms-main-variant-bg: #1C2333;
-        --ms-main-hover-bg: #1C2333;
-        --ms-jumbotron-color: #ffffff;
-        --ms-jumbotron-bg: #0D1117;
-        --ms-footer-color: #8B949E;
-        --ms-footer-bg: #0D1117;
-        --ms-footer-link-color: #E87722;
-        --ms-footer-link-hover-color: #F9A155;
-        --ms-link-color: #E87722;
-        --ms-link-hover-color: #F9A155;
-        --ms-button-primary-bg: #E87722;
-        --ms-button-primary-border-color: #E87722;
-        --ms-button-primary-hover-bg: #C45E0A;
-        --ms-button-primary-hover-border-color: #C45E0A;
-        --ms-font-family-base: 'DM Sans', sans-serif;
-        --ms-font-family-sans-serif: 'DM Sans', sans-serif;
+    /* ── Paleta institucional CRISOL ── */
+    :root {
+        --crisol-blue-dark:   #0d2a4a;
+        --crisol-blue:        #1a3f6f;
+        --crisol-blue-mid:    #2a5f8f;
+        --crisol-blue-light:  #4a8fc0;
+        --crisol-orange:      #E87722;
+        --crisol-orange-dark: #C45E0A;
+        --crisol-white:       #ffffff;
+        --crisol-gray-light:  #f4f6f8;
+        --crisol-gray:        #e0e4e8;
+        --crisol-text:        #2c3e50;
+        --crisol-text-muted:  #6c7a89;
     }
 
-    /* Navbar */
+    .msgapi .gn-theme {
+        --ms-primary:              var(--crisol-blue);
+        --ms-primary-contrast:     #ffffff;
+        --ms-main-color:           var(--crisol-text);
+        --ms-main-bg:              var(--crisol-white);
+        --ms-main-border-color:    var(--crisol-gray);
+        --ms-main-variant-bg:      var(--crisol-gray-light);
+        --ms-main-hover-bg:        var(--crisol-gray-light);
+        --ms-jumbotron-color:      #ffffff;
+        --ms-jumbotron-bg:         var(--crisol-blue-dark);
+        --ms-footer-color:         #cbd5e0;
+        --ms-footer-bg:            var(--crisol-blue-dark);
+        --ms-footer-link-color:    #ffffff;
+        --ms-footer-link-hover-color: var(--crisol-orange);
+        --ms-link-color:           var(--crisol-blue-mid);
+        --ms-link-hover-color:     var(--crisol-orange);
+        --ms-button-primary-bg:            var(--crisol-blue);
+        --ms-button-primary-border-color:  var(--crisol-blue);
+        --ms-button-primary-hover-bg:      var(--crisol-blue-mid);
+        --ms-font-family-base:     'Open Sans', sans-serif;
+        --ms-font-family-sans-serif: 'Open Sans', sans-serif;
+    }
+
+    /* ── Body general ── */
+    body.msgapi {
+        background-color: var(--crisol-white);
+        font-family: 'Open Sans', sans-serif;
+        color: var(--crisol-text);
+    }
+
+    .gn-page-wrapper {
+        background-color: var(--crisol-white);
+    }
+
+    /* ── Navbar ── */
     #gn-brand-navbar {
-        background-color: #0D1117 !important;
-        border-bottom: 1px solid rgba(232,119,34,0.3) !important;
+        background-color: var(--crisol-white) !important;
+        border-bottom: 2px solid var(--crisol-gray) !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     #gn-brand-navbar a {
-        color: #E6EDF3 !important;
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 500;
+        color: var(--crisol-blue) !important;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 0.875rem;
         transition: color 0.2s;
     }
 
     #gn-brand-navbar a:hover {
-        color: #E87722 !important;
+        color: var(--crisol-orange) !important;
         text-decoration: none;
     }
 
-    #gn-brand-navbar .gn-brand-navbar-menu li a {
-        font-size: 0.875rem;
-    }
-
-    /* Botones navbar */
     #gn-brand-navbar .btn {
-        background-color: transparent !important;
-        border: 1px solid rgba(232,119,34,0.5) !important;
-        color: #E87722 !important;
-        border-radius: 6px;
-        font-family: 'DM Sans', sans-serif;
+        background-color: var(--crisol-blue) !important;
+        border: none !important;
+        color: #ffffff !important;
+        border-radius: 4px;
+        font-family: 'Open Sans', sans-serif;
         font-size: 0.8rem;
-        transition: all 0.2s;
+        font-weight: 600;
+        padding: 0.35rem 0.9rem;
+        transition: background-color 0.2s;
     }
 
     #gn-brand-navbar .btn:hover {
-        background-color: #E87722 !important;
-        color: #ffffff !important;
+        background-color: var(--crisol-blue-mid) !important;
     }
 
-    /* Hero */
+    /* ── Hero ── */
     #gn-hero {
-        background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #0D1117 100%) !important;
         position: relative;
         overflow: hidden;
-    }
-
-    #gn-hero::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background:
-            radial-gradient(ellipse 60% 50% at 20% 50%, rgba(232,119,34,0.08) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 60% at 80% 50%, rgba(74,172,219,0.06) 0%, transparent 70%);
-        pointer-events: none;
+        min-height: 420px;
     }
 
     #gn-hero .jumbotron {
         background: transparent !important;
         text-align: center;
-        padding: 5rem 2rem;
+        padding: 6rem 2rem 4rem;
+        position: relative;
+        z-index: 2;
     }
 
     #gn-hero .jumbotron h1 {
-        font-family: 'Syne', sans-serif !important;
-        font-size: 3.5rem;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 3rem;
         font-weight: 800;
-        color: #E6EDF3;
-        letter-spacing: -0.02em;
-        margin-bottom: 1rem;
+        color: #ffffff;
+        letter-spacing: 0.02em;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        margin-bottom: 0.75rem;
     }
 
     #gn-hero .jumbotron p {
-        font-family: 'DM Sans', sans-serif;
-        font-size: 1.1rem;
-        color: #8B949E;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1rem;
+        color: rgba(255,255,255,0.88);
         font-weight: 300;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+        margin-bottom: 0;
     }
 
-    /* Search bar */
+    /* ── Search bar ── */
     .gn-search-bar input,
     #gn-search-bar input {
-        background-color: #1C2333 !important;
-        border: 1px solid #30363d !important;
-        color: #E6EDF3 !important;
-        border-radius: 8px;
-        font-family: 'DM Sans', sans-serif;
+        background-color: #ffffff !important;
+        border: 1px solid var(--crisol-gray) !important;
+        color: var(--crisol-text) !important;
+        border-radius: 6px;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .gn-search-bar input:focus,
     #gn-search-bar input:focus {
-        border-color: #E87722 !important;
-        box-shadow: 0 0 0 3px rgba(232,119,34,0.15) !important;
+        border-color: var(--crisol-blue-light) !important;
+        box-shadow: 0 0 0 3px rgba(74,143,192,0.2) !important;
         outline: none;
     }
 
-    /* Cards */
+    /* ── Cards ── */
     .gn-card, .gn-resource-card {
-        background-color: #161B22 !important;
-        border: 1px solid #30363d !important;
-        border-radius: 10px !important;
-        transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s !important;
+        background-color: #ffffff !important;
+        border: 1px solid var(--crisol-gray) !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+        transition: transform 0.2s, box-shadow 0.2s !important;
     }
 
     .gn-card:hover, .gn-resource-card:hover {
-        border-color: rgba(232,119,34,0.5) !important;
         transform: translateY(-3px) !important;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+        border-color: var(--crisol-blue-light) !important;
     }
 
-    /* Página general */
-    body.msgapi {
-        background-color: #0D1117;
-        font-family: 'DM Sans', sans-serif;
-    }
-
-    .gn-page-wrapper {
-        background-color: #0D1117;
-    }
-
-    /* Footer */
+    /* ── Footer ── */
     .gn-footer {
-        background-color: #0D1117 !important;
-        border-top: 1px solid #30363d;
+        background-color: var(--crisol-blue-dark) !important;
+        border-top: 3px solid var(--crisol-orange);
     }
 
     .gn-footer a {
-        color: #8B949E !important;
-        font-family: 'DM Sans', sans-serif;
+        color: #cbd5e0 !important;
+        font-family: 'Open Sans', sans-serif;
         font-size: 0.85rem;
         transition: color 0.2s;
     }
 
     .gn-footer a:hover {
-        color: #E87722 !important;
+        color: var(--crisol-orange) !important;
     }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0D1117; }
-    ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #E87722; }
+    /* ── Badges ── */
+    .gn-badge {
+        background-color: var(--crisol-blue) !important;
+        color: #ffffff !important;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
 
-    ::selection { background: rgba(232,119,34,0.3); color: #E6EDF3; }
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--crisol-gray-light); }
+    ::-webkit-scrollbar-thumb { background: var(--crisol-blue-light); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--crisol-orange); }
+
+    ::selection { background: rgba(232,119,34,0.25); color: var(--crisol-text); }
 </style>
 
 {% block content %}{% endblock %}
