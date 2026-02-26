@@ -1,200 +1,216 @@
+{% if custom_theme.extra_css %}
 <style>
-  {% block extra_css %}
-      {{ custom_theme.extra_css }}
-  {% endblock %}
+  {{ custom_theme.extra_css }}
+</style>
+{% endif %}
 
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@400;600;700;800&display=swap');
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@400;600;700;800&display=swap");
 
   /* ── Paleta institucional CRISOL ── */
   :root {
-      --crisol-blue-dark:   #0d2a4a;
-      --crisol-blue:        #1a3f6f;
-      --crisol-blue-mid:    #2a5f8f;
-      --crisol-blue-light:  #4a8fc0;
-      --crisol-orange:      #E87722;
-      --crisol-orange-dark: #C45E0A;
-      --crisol-white:       #ffffff;
-      --crisol-gray-light:  #f4f6f8;
-      --crisol-gray:        #e0e4e8;
-      --crisol-text:        #2c3e50;
-      --crisol-text-muted:  #6c7a89;
+    --crisol-blue-dark: #0d2a4a;
+    --crisol-blue: #1a3f6f;
+    --crisol-blue-mid: #2a5f8f;
+    --crisol-blue-light: #4a8fc0;
+    --crisol-orange: #e87722;
+    --crisol-orange-dark: #c45e0a;
+    --crisol-white: #ffffff;
+    --crisol-gray-light: #f4f6f8;
+    --crisol-gray: #e0e4e8;
+    --crisol-text: #2c3e50;
+    --crisol-text-muted: #6c7a89;
   }
 
   .msgapi .gn-theme {
-      --ms-primary:              var(--crisol-blue);
-      --ms-primary-contrast:     #ffffff;
-      --ms-main-color:           var(--crisol-text);
-      --ms-main-bg:              var(--crisol-white);
-      --ms-main-border-color:    var(--crisol-gray);
-      --ms-main-variant-bg:      var(--crisol-gray-light);
-      --ms-main-hover-bg:        var(--crisol-gray-light);
-      --ms-jumbotron-color:      #ffffff;
-      --ms-jumbotron-bg:         var(--crisol-blue-dark);
-      --ms-footer-color:         #cbd5e0;
-      --ms-footer-bg:            var(--crisol-blue-dark);
-      --ms-footer-link-color:    #ffffff;
-      --ms-footer-link-hover-color: var(--crisol-orange);
-      --ms-link-color:           var(--crisol-blue-mid);
-      --ms-link-hover-color:     var(--crisol-orange);
-      --ms-button-primary-bg:            var(--crisol-blue);
-      --ms-button-primary-border-color:  var(--crisol-blue);
-      --ms-button-primary-hover-bg:      var(--crisol-blue-mid);
-      --ms-font-family-base:     'Open Sans', sans-serif;
-      --ms-font-family-sans-serif: 'Open Sans', sans-serif;
+    --ms-primary: var(--crisol-blue);
+    --ms-primary-contrast: #ffffff;
+    --ms-main-color: var(--crisol-text);
+    --ms-main-bg: var(--crisol-white);
+    --ms-main-border-color: var(--crisol-gray);
+    --ms-main-variant-bg: var(--crisol-gray-light);
+    --ms-main-hover-bg: var(--crisol-gray-light);
+    --ms-jumbotron-color: #ffffff;
+    --ms-jumbotron-bg: var(--crisol-blue-dark);
+    --ms-footer-color: #cbd5e0;
+    --ms-footer-bg: var(--crisol-blue-dark);
+    --ms-footer-link-color: #ffffff;
+    --ms-footer-link-hover-color: var(--crisol-orange);
+    --ms-link-color: var(--crisol-blue-mid);
+    --ms-link-hover-color: var(--crisol-orange);
+    --ms-button-primary-bg: var(--crisol-blue);
+    --ms-button-primary-border-color: var(--crisol-blue);
+    --ms-button-primary-hover-bg: var(--crisol-blue-mid);
+    --ms-font-family-base: "Open Sans", sans-serif;
+    --ms-font-family-sans-serif: "Open Sans", sans-serif;
   }
 
   /* ── Body general ── */
   body.msgapi {
-      background-color: var(--crisol-white);
-      font-family: 'Open Sans', sans-serif;
-      color: var(--crisol-text);
+    background-color: var(--crisol-white);
+    font-family: "Open Sans", sans-serif;
+    color: var(--crisol-text);
   }
 
   .gn-page-wrapper {
-      background-color: var(--crisol-white);
+    background-color: var(--crisol-white);
   }
 
   /* ── Navbar ── */
   #gn-brand-navbar {
-      background-color: var(--crisol-white) !important;
-      border-bottom: 2px solid var(--crisol-gray) !important;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background-color: var(--crisol-white) !important;
+    border-bottom: 2px solid var(--crisol-gray) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 
   #gn-brand-navbar a {
-      color: var(--crisol-blue) !important;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 600;
-      font-size: 0.875rem;
-      transition: color 0.2s;
+    color: var(--crisol-blue) !important;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: color 0.2s;
   }
 
   #gn-brand-navbar a:hover {
-      color: var(--crisol-orange) !important;
-      text-decoration: none;
+    color: var(--crisol-orange) !important;
+    text-decoration: none;
   }
 
   #gn-brand-navbar .btn {
-      background-color: var(--crisol-blue) !important;
-      border: none !important;
-      color: #ffffff !important;
-      border-radius: 4px;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.35rem 0.9rem;
-      transition: background-color 0.2s;
+    background-color: var(--crisol-blue) !important;
+    border: none !important;
+    color: #ffffff !important;
+    border-radius: 4px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 0.9rem;
+    transition: background-color 0.2s;
   }
 
   #gn-brand-navbar .btn:hover {
-      background-color: var(--crisol-blue-mid) !important;
+    background-color: var(--crisol-blue-mid) !important;
   }
 
   /* ── Hero ── */
   #gn-hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 420px;
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
   }
 
   #gn-hero .jumbotron {
-      background: transparent !important;
-      text-align: center;
-      padding: 6rem 2rem 4rem;
-      position: relative;
-      z-index: 2;
+    background: transparent !important;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    z-index: 2;
   }
 
   #gn-hero .jumbotron h1 {
-      font-family: 'Montserrat', sans-serif !important;
-      font-size: 3rem;
-      font-weight: 800;
-      color: #ffffff;
-      letter-spacing: 0.02em;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-      margin-bottom: 0.75rem;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.75rem;
   }
 
   #gn-hero .jumbotron p {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1rem;
-      color: rgba(255,255,255,0.88);
-      font-weight: 300;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-      margin-bottom: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 300;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0;
   }
 
   /* ── Search bar ── */
   .gn-search-bar input,
   #gn-search-bar input {
-      background-color: #ffffff !important;
-      border: 1px solid var(--crisol-gray) !important;
-      color: var(--crisol-text) !important;
-      border-radius: 6px;
-      font-family: 'Open Sans', sans-serif;
+    background-color: #ffffff !important;
+    border: 1px solid var(--crisol-gray) !important;
+    color: var(--crisol-text) !important;
+    border-radius: 6px;
+    font-family: "Open Sans", sans-serif;
   }
 
   .gn-search-bar input:focus,
   #gn-search-bar input:focus {
-      border-color: var(--crisol-blue-light) !important;
-      box-shadow: 0 0 0 3px rgba(74,143,192,0.2) !important;
-      outline: none;
+    border-color: var(--crisol-blue-light) !important;
+    box-shadow: 0 0 0 3px rgba(74, 143, 192, 0.2) !important;
+    outline: none;
   }
 
   /* ── Cards ── */
-  .gn-card, .gn-resource-card {
-      background-color: #ffffff !important;
-      border: 1px solid var(--crisol-gray) !important;
-      border-radius: 8px !important;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
-      transition: transform 0.2s, box-shadow 0.2s !important;
+  .gn-card,
+  .gn-resource-card {
+    background-color: #ffffff !important;
+    border: 1px solid var(--crisol-gray) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s !important;
   }
 
-  .gn-card:hover, .gn-resource-card:hover {
-      transform: translateY(-3px) !important;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
-      border-color: var(--crisol-blue-light) !important;
+  .gn-card:hover,
+  .gn-resource-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+    border-color: var(--crisol-blue-light) !important;
   }
 
   /* ── Footer — no fijo, al final del contenido ── */
   .gn-footer {
-      background-color: var(--crisol-blue-dark) !important;
-      border-top: 3px solid var(--crisol-orange);
-      position: relative !important;
-      bottom: auto !important;
+    background-color: var(--crisol-blue-dark) !important;
+    border-top: 3px solid var(--crisol-orange);
+    position: relative !important;
+    bottom: auto !important;
   }
 
   .gn-footer-placeholder {
-      display: none !important;
+    display: none !important;
   }
 
   .gn-footer a {
-      color: #cbd5e0 !important;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 0.85rem;
-      transition: color 0.2s;
+    color: #cbd5e0 !important;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.85rem;
+    transition: color 0.2s;
   }
 
   .gn-footer a:hover {
-      color: var(--crisol-orange) !important;
+    color: var(--crisol-orange) !important;
   }
 
   /* ── Badges ── */
   .gn-badge {
-      background-color: var(--crisol-blue) !important;
-      color: #ffffff !important;
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: 600;
+    background-color: var(--crisol-blue) !important;
+    color: #ffffff !important;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
   }
 
   /* ── Scrollbar ── */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--crisol-gray-light); }
-  ::-webkit-scrollbar-thumb { background: var(--crisol-blue-light); border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--crisol-orange); }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--crisol-gray-light);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--crisol-blue-light);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--crisol-orange);
+  }
 
-  ::selection { background: rgba(232,119,34,0.25); color: var(--crisol-text); }
+  ::selection {
+    background: rgba(232, 119, 34, 0.25);
+    color: var(--crisol-text);
+  }
 </style>
-
-{% block content %}{% endblock %}
