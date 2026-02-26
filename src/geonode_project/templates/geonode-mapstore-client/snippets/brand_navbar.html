@@ -11,6 +11,7 @@ get_menu_json 'TOPBAR_MENU_RIGHT' as TOPBAR_MENU_RIGHT %} {% block extra_style
     {% block logo %}
     <a
       href="/"
+      class="gn-brand-logo"
       style="
         display: flex;
         align-items: center;
@@ -18,35 +19,31 @@ get_menu_json 'TOPBAR_MENU_RIGHT' as TOPBAR_MENU_RIGHT %} {% block extra_style
         text-decoration: none;
       "
     >
-      <a
-        href="/"
+      <img
+        src="{% static 'img/logo_crisol.png' %}"
+        alt="CRISOL UNCuyo"
+        style="height: 36px"
+      />
+      <span
         style="
-          display: flex;
-          align-items: center;
-          gap: 0.6rem;
-          text-decoration: none;
+          font-family: &quot;Syne&quot;, sans-serif;
+          font-weight: 800;
+          font-size: 1.1rem;
+          color: #e87722;
         "
       >
-        <img src="{% static 'img/logo_crisol.png' %}" style="height: 36px" />
-        <span
-          style="
-            font-family: &quot;Syne&quot;, sans-serif;
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: #e87722;
-          "
-          >CRISOL</span
-        >
-        <span
-          style="
-            font-family: &quot;Syne&quot;, sans-serif;
-            font-weight: 400;
-            font-size: 1.1rem;
-            color: #8b949e;
-          "
-          >UNCUYO</span
-        >
-      </a>
+        CRISOL
+      </span>
+      <span
+        style="
+          font-family: &quot;Syne&quot;, sans-serif;
+          font-weight: 400;
+          font-size: 1.1rem;
+          color: #8b949e;
+        "
+      >
+        UNCuyo
+      </span>
     </a>
     {% endblock %} {% block left_menu %}
     <div
