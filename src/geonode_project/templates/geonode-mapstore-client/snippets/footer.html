@@ -1,121 +1,335 @@
 <div class="gn-footer-placeholder"></div>
-<footer class="gn-footer" style="background-color:#0d2a4a;border-top:3px solid #E87722;padding:2.5rem 2rem 1rem;">
-    <div style="max-width:1200px;margin:0 auto;">
-
-        <!-- Grid 4 columnas -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-bottom:2rem;">
-
-            <!-- Columna 1: Datos -->
-            <div>
-                <div style="font-family:'Open Sans',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:0.5rem;">
-                    Datos
-                </div>
-                <ul style="list-style:none;padding:0;margin:0;">
-                    <li style="margin-bottom:0.5rem;">
-                        <a href="/catalogue/#/?resource_type=dataset" style="font-size:0.85rem;color:#cbd5e0;font-family:'Open Sans',sans-serif;text-decoration:none;"
-                           onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#cbd5e0'">Capas</a>
-                    </li>
-                    <li style="margin-bottom:0.5rem;">
-                        <a href="/catalogue/#/?resource_type=document" style="font-size:0.85rem;color:#cbd5e0;font-family:'Open Sans',sans-serif;text-decoration:none;"
-                           onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#cbd5e0'">Documentos</a>
-                    </li>
-                    <li>
-                        <a href="/services/" style="font-size:0.85rem;color:#cbd5e0;font-family:'Open Sans',sans-serif;text-decoration:none;"
-                           onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#cbd5e0'">Servicios Remotos</a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Columna 2: Mapas -->
-            <div>
-                <div style="font-family:'Open Sans',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:0.5rem;">
-                    Mapas
-                </div>
-                <ul style="list-style:none;padding:0;margin:0;">
-                    <li>
-                        <a href="/catalogue/#/?resource_type=map" style="font-size:0.85rem;color:#cbd5e0;font-family:'Open Sans',sans-serif;text-decoration:none;"
-                           onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#cbd5e0'">Explora Mapas</a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Columna 3: Acerca de -->
-            <div>
-                <div style="font-family:'Open Sans',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:0.5rem;">
-                    Acerca de
-                </div>
-                <ul style="list-style:none;padding:0;margin:0;">
-                    <li style="margin-bottom:0.5rem;">
-                        <a href="/people/" style="font-size:0.85rem;color:#cbd5e0;font-family:'Open Sans',sans-serif;text-decoration:none;"
-                           onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#cbd5e0'">Personas</a>
-                    </li>
-                    <li>
-                        <a href="/groups/" style="font-size:0.85rem;color:#cbd5e0;font-family:'Open Sans',sans-serif;text-decoration:none;"
-                           onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#cbd5e0'">Grupos</a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Columna 4: Contacto -->
-            <div>
-                <div style="font-family:'Open Sans',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#ffffff;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:0.5rem;">
-                    Contáctenos
-                </div>
-                <ul style="list-style:none;padding:0;margin:0;">
-                    <li style="font-size:0.85rem;color:#cbd5e0;font-family:'Open Sans',sans-serif;margin-bottom:0.4rem;font-weight:600;">
-                        Crisol UNCuyo
-                    </li>
-                    <li style="font-size:0.8rem;color:#a0aec0;font-family:'Open Sans',sans-serif;margin-bottom:0.4rem;line-height:1.5;">
-                        Centro Universitario S/N · Universidad Nacional de Cuyo · Ciudad de Mendoza
-                    </li>
-                    <li style="font-size:0.8rem;color:#a0aec0;font-family:'Open Sans',sans-serif;margin-bottom:0.4rem;">
-                        CP: 5000
-                    </li>
-                    <li style="font-size:0.8rem;color:#a0aec0;font-family:'Open Sans',sans-serif;margin-bottom:0.4rem;">
-                        Mendoza · Argentina
-                    </li>
-                    <li style="font-size:0.8rem;color:#a0aec0;font-family:'Open Sans',sans-serif;margin-bottom:0.4rem;">
-                        Tel: 54-2614135000 interno 3122
-                    </li>
-                    <li style="font-size:0.8rem;font-family:'Open Sans',sans-serif;">
-                        <a href="mailto:lmagni@uncu.edu.ar" style="color:#a0aec0;text-decoration:none;"
-                           onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#a0aec0'">
-                            lmagni@uncu.edu.ar
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+<footer
+  class="gn-footer"
+  style="
+    background-color: #0d2a4a;
+    border-top: 3px solid #e87722;
+    padding: 2.5rem 2rem 1rem;
+  "
+>
+  <div style="max-width: 1200px; margin: 0 auto">
+    <!-- Grid 4 columnas -->
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+      "
+    >
+      <!-- Columna 1: Datos -->
+      <div>
+        <div
+          style="
+            font-family: &quot;Open Sans&quot;, sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 0.5rem;
+          "
+        >
+          Datos
         </div>
+        <ul style="list-style: none; padding: 0; margin: 0">
+          <li style="margin-bottom: 0.5rem">
+            <a
+              href="/catalogue/#/?resource_type=dataset"
+              style="
+                font-size: 0.85rem;
+                color: #cbd5e0;
+                font-family: &quot;Open Sans&quot;, sans-serif;
+                text-decoration: none;
+              "
+              onmouseover="this.style.color = '#E87722'"
+              onmouseout="this.style.color = '#cbd5e0'"
+              >Capas</a
+            >
+          </li>
+          <li style="margin-bottom: 0.5rem">
+            <a
+              href="/catalogue/#/?resource_type=document"
+              style="
+                font-size: 0.85rem;
+                color: #cbd5e0;
+                font-family: &quot;Open Sans&quot;, sans-serif;
+                text-decoration: none;
+              "
+              onmouseover="this.style.color = '#E87722'"
+              onmouseout="this.style.color = '#cbd5e0'"
+              >Documentos</a
+            >
+          </li>
+          <li>
+            <a
+              href="/services/"
+              style="
+                font-size: 0.85rem;
+                color: #cbd5e0;
+                font-family: &quot;Open Sans&quot;, sans-serif;
+                text-decoration: none;
+              "
+              onmouseover="this.style.color = '#E87722'"
+              onmouseout="this.style.color = '#cbd5e0'"
+              >Servicios Remotos</a
+            >
+          </li>
+        </ul>
+      </div>
 
-        <!-- Línea divisoria -->
-        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
-            <span style="font-size:0.75rem;color:#718096;font-family:'Open Sans',sans-serif;">
-                © CRISOL UNCUYO · Universidad Nacional de Cuyo · Todos los derechos reservados
-            </span>
-            <div style="display:flex;gap:1.5rem;">
-                <a href="https://geonode.org/" target="_blank" style="font-size:0.75rem;color:#718096;font-family:'Open Sans',sans-serif;text-decoration:none;"
-                   onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#718096'">geonode.org</a>
-                <a href="/developer/" style="font-size:0.75rem;color:#718096;font-family:'Open Sans',sans-serif;text-decoration:none;"
-                   onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#718096'">Developers</a>
-                <a href="/about/" style="font-size:0.75rem;color:#718096;font-family:'Open Sans',sans-serif;text-decoration:none;"
-                   onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#718096'">About</a>
-            </div>
+      <!-- Columna 2: Mapas -->
+      <div>
+        <div
+          style="
+            font-family: &quot;Open Sans&quot;, sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 0.5rem;
+          "
+        >
+          Mapas
         </div>
+        <ul style="list-style: none; padding: 0; margin: 0">
+          <li>
+            <a
+              href="/catalogue/#/?resource_type=map"
+              style="
+                font-size: 0.85rem;
+                color: #cbd5e0;
+                font-family: &quot;Open Sans&quot;, sans-serif;
+                text-decoration: none;
+              "
+              onmouseover="this.style.color = '#E87722'"
+              onmouseout="this.style.color = '#cbd5e0'"
+              >Explora Mapas</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Acerca de -->
+      <div>
+        <div
+          style="
+            font-family: &quot;Open Sans&quot;, sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 0.5rem;
+          "
+        >
+          Acerca de
+        </div>
+        <ul style="list-style: none; padding: 0; margin: 0">
+          <li style="margin-bottom: 0.5rem">
+            <a
+              href="/people/"
+              style="
+                font-size: 0.85rem;
+                color: #cbd5e0;
+                font-family: &quot;Open Sans&quot;, sans-serif;
+                text-decoration: none;
+              "
+              onmouseover="this.style.color = '#E87722'"
+              onmouseout="this.style.color = '#cbd5e0'"
+              >Personas</a
+            >
+          </li>
+          <li>
+            <a
+              href="/groups/"
+              style="
+                font-size: 0.85rem;
+                color: #cbd5e0;
+                font-family: &quot;Open Sans&quot;, sans-serif;
+                text-decoration: none;
+              "
+              onmouseover="this.style.color = '#E87722'"
+              onmouseout="this.style.color = '#cbd5e0'"
+              >Grupos</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Contacto -->
+      <div>
+        <div
+          style="
+            font-family: &quot;Open Sans&quot;, sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 0.5rem;
+          "
+        >
+          Contáctenos
+        </div>
+        <ul style="list-style: none; padding: 0; margin: 0">
+          <li
+            style="
+              font-size: 0.85rem;
+              color: #cbd5e0;
+              font-family: &quot;Open Sans&quot;, sans-serif;
+              margin-bottom: 0.4rem;
+              font-weight: 600;
+            "
+          >
+            Crisol UNCuyo
+          </li>
+          <li
+            style="
+              font-size: 0.8rem;
+              color: #a0aec0;
+              font-family: &quot;Open Sans&quot;, sans-serif;
+              margin-bottom: 0.4rem;
+              line-height: 1.5;
+            "
+          >
+            Centro Universitario S/N · Universidad Nacional de Cuyo · Ciudad de
+            Mendoza
+          </li>
+          <li
+            style="
+              font-size: 0.8rem;
+              color: #a0aec0;
+              font-family: &quot;Open Sans&quot;, sans-serif;
+              margin-bottom: 0.4rem;
+            "
+          >
+            CP: 5000
+          </li>
+          <li
+            style="
+              font-size: 0.8rem;
+              color: #a0aec0;
+              font-family: &quot;Open Sans&quot;, sans-serif;
+              margin-bottom: 0.4rem;
+            "
+          >
+            Mendoza · Argentina
+          </li>
+          <li
+            style="
+              font-size: 0.8rem;
+              color: #a0aec0;
+              font-family: &quot;Open Sans&quot;, sans-serif;
+              margin-bottom: 0.4rem;
+            "
+          >
+            Tel: 54-2614135000 interno 3122
+          </li>
+          <li
+            style="
+              font-size: 0.8rem;
+              font-family: &quot;Open Sans&quot;, sans-serif;
+            "
+          >
+            <a
+              href="mailto:lmagni@uncu.edu.ar"
+              style="color: #a0aec0; text-decoration: none"
+              onmouseover="this.style.color = '#E87722'"
+              onmouseout="this.style.color = '#a0aec0'"
+            >
+              lmagni@uncu.edu.ar
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
+
+    <!-- Línea divisoria -->
+    <div
+      style="
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      "
+    >
+      <span
+        style="
+          font-size: 0.75rem;
+          color: #718096;
+          font-family: &quot;Open Sans&quot;, sans-serif;
+        "
+      >
+        © CRISOL UNCUYO · Universidad Nacional de Cuyo · Todos los derechos
+        reservados
+      </span>
+      <div style="display: flex; gap: 1.5rem">
+        <a
+          href="https://geonode.org/"
+          target="_blank"
+          style="
+            font-size: 0.75rem;
+            color: #718096;
+            font-family: &quot;Open Sans&quot;, sans-serif;
+            text-decoration: none;
+          "
+          onmouseover="this.style.color = '#E87722'"
+          onmouseout="this.style.color = '#718096'"
+          >geonode.org</a
+        >
+        <a
+          href="/developer/"
+          style="
+            font-size: 0.75rem;
+            color: #718096;
+            font-family: &quot;Open Sans&quot;, sans-serif;
+            text-decoration: none;
+          "
+          onmouseover="this.style.color = '#E87722'"
+          onmouseout="this.style.color = '#718096'"
+          >Developers</a
+        >
+        <a
+          href="/about/"
+          style="
+            font-size: 0.75rem;
+            color: #718096;
+            font-family: &quot;Open Sans&quot;, sans-serif;
+            text-decoration: none;
+          "
+          onmouseover="this.style.color = '#E87722'"
+          onmouseout="this.style.color = '#718096'"
+          >About</a
+        >
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script>
-    (function () {
-        const footer = document.querySelector('.gn-footer');
-        const footerPlaceholder = document.querySelector('.gn-footer-placeholder');
-        function resize() {
-            if (footerPlaceholder && footer) {
-                footerPlaceholder.style.height = footer.clientHeight + 'px';
-            }
-        }
-        window.addEventListener('resize', resize);
-        window.addEventListener('DOMContentLoaded', resize);
-        resize();
-    })();
+  (function () {
+    const footer = document.querySelector(".gn-footer");
+    const footerPlaceholder = document.querySelector(".gn-footer-placeholder");
+    function resize() {
+      if (footerPlaceholder && footer) {
+        footerPlaceholder.style.height = footer.clientHeight + "px";
+      }
+    }
+    window.addEventListener("resize", resize);
+    window.addEventListener("DOMContentLoaded", resize);
+    resize();
+  })();
 </script>
