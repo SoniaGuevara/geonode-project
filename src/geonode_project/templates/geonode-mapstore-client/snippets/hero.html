@@ -1,5 +1,5 @@
 {% load i18n %} {% load base_tags %} {% if custom_theme.jumbotron_bg and
-custom_theme.jumbotron_bg.url %}
+custom_theme.jumbotron_bg.url %}{% load static %}
 <style>
   #gn-hero {
     background-image: url('{% static "img/paisaje_crisol.jpg" %}');
