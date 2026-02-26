@@ -1,0 +1,162 @@
+{% extends 'geonode-mapstore-client/snippets/footer.html' %}
+
+{% block footer %}
+<footer class="crisol-footer">
+    <div class="crisol-footer-inner">
+        <div class="crisol-footer-grid">
+
+            <!-- Columna 1: Logo e info -->
+            <div class="crisol-footer-brand">
+                <img src="/static/geonode_project/img/crisol_logo.png" alt="CRISOL UNCUYO" class="crisol-footer-logo" />
+                <p class="crisol-footer-desc">
+                    Infraestructura de Datos Espaciales de la Universidad Nacional de Cuyo. Plataforma para el acceso, visualización y descarga de información geoespacial.
+                </p>
+                <div class="crisol-footer-contact">
+                    <span>📍 Centro Universitario S/N, Mendoza, Argentina</span>
+                    <span>📧 lmagni@uncu.edu.ar</span>
+                    <span>📞 +54 261 413-5000 int. 3122</span>
+                </div>
+            </div>
+
+            <!-- Columna 2: Datos -->
+            <div class="crisol-footer-col">
+                <h4 class="crisol-footer-title">Datos</h4>
+                <ul class="crisol-footer-links">
+                    <li><a href="/datasets/">Capas de datos</a></li>
+                    <li><a href="/documents/">Documentos</a></li>
+                    <li><a href="/maps/">Mapas interactivos</a></li>
+                    <li><a href="/catalogue/">Catálogo</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Comunidad -->
+            <div class="crisol-footer-col">
+                <h4 class="crisol-footer-title">Comunidad</h4>
+                <ul class="crisol-footer-links">
+                    <li><a href="/people/">Personas</a></li>
+                    <li><a href="/groups/">Grupos</a></li>
+                    <li><a href="/account/signup/">Registrarse</a></li>
+                    <li><a href="/about/">Acerca de</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="crisol-footer-bottom">
+            <span>© {% now "Y" %} CRISOL UNCUYO — Universidad Nacional de Cuyo</span>
+            <span class="crisol-footer-powered">
+                Powered by <a href="https://geonode.org" target="_blank" rel="noopener">GeoNode</a>
+            </span>
+        </div>
+    </div>
+</footer>
+
+<style>
+.crisol-footer {
+    background: #0D1117;
+    border-top: 1px solid #21262d;
+    padding: 3.5rem 0 0;
+    margin-top: auto;
+}
+
+.crisol-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.crisol-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.crisol-footer-logo {
+    height: 36px;
+    margin-bottom: 1rem;
+    filter: brightness(1.1);
+}
+
+.crisol-footer-desc {
+    font-size: 0.8125rem;
+    color: #484f58;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 320px;
+}
+
+.crisol-footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.crisol-footer-contact span {
+    font-size: 0.75rem;
+    color: #484f58;
+}
+
+.crisol-footer-title {
+    font-family: 'Syne', sans-serif !important;
+    font-size: 0.6875rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: #E87722 !important;
+    margin-bottom: 1rem !important;
+}
+
+.crisol-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.crisol-footer-links a {
+    font-size: 0.8125rem;
+    color: #484f58 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.crisol-footer-links a:hover {
+    color: #E87722 !important;
+}
+
+.crisol-footer-bottom {
+    border-top: 1px solid #21262d;
+    padding: 1.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #30363d;
+}
+
+.crisol-footer-powered a {
+    color: #484f58 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.crisol-footer-powered a:hover {
+    color: #E87722 !important;
+}
+
+@media (max-width: 768px) {
+    .crisol-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .crisol-footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+</style>
+{% endblock %}

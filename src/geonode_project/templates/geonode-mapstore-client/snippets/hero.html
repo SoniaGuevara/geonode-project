@@ -1,0 +1,403 @@
+{% extends 'geonode-mapstore-client/snippets/hero.html' %}
+
+{% block hero %}
+<div class="crisol-hero">
+    <!-- Fondo con efecto de malla geográfica animada -->
+    <div class="crisol-hero-bg">
+        <div class="crisol-grid-overlay"></div>
+        <div class="crisol-gradient-overlay"></div>
+        <canvas class="crisol-particles" id="crisolParticles"></canvas>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="crisol-hero-content">
+        <div class="crisol-hero-badge">
+            <span class="crisol-badge-dot"></span>
+            Infraestructura de Datos Espaciales
+        </div>
+
+        <h1 class="crisol-hero-title">
+            <span class="crisol-title-main">CRISOL</span>
+            <span class="crisol-title-sub">UNCUYO</span>
+        </h1>
+
+        <p class="crisol-hero-description">
+            Plataforma de datos geoespaciales de la Universidad Nacional de Cuyo.<br>
+            Accedé, explorá y descargá cartografía digital de Mendoza y la región.
+        </p>
+
+        <!-- Barra de búsqueda -->
+        <div class="crisol-search-wrapper">
+            <form class="crisol-search-form" action="/catalogue/" method="get">
+                <div class="crisol-search-inner">
+                    <svg class="crisol-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                    </svg>
+                    <input
+                        type="text"
+                        name="q"
+                        class="crisol-search-input"
+                        placeholder="Buscar capas, mapas, documentos..."
+                        autocomplete="off"
+                    />
+                    <button type="submit" class="crisol-search-btn">
+                        Buscar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Stats -->
+        <div class="crisol-stats">
+            <a href="/datasets/" class="crisol-stat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 6l9-3 9 3v12l-9 3-9-3V6z"/><path d="M12 3v18M3 6l9 3 9-3"/>
+                </svg>
+                <span class="crisol-stat-label">Capas de datos</span>
+            </a>
+            <div class="crisol-stat-divider"></div>
+            <a href="/maps/" class="crisol-stat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13V7m0 13 6-3M9 7l6-3m0 17 5.447-2.724A1 1 0 0 0 21 16.382V5.618a1 1 0 0 0-1.447-.894L15 7m0 14V7"/>
+                </svg>
+                <span class="crisol-stat-label">Mapas interactivos</span>
+            </a>
+            <div class="crisol-stat-divider"></div>
+            <a href="/documents/" class="crisol-stat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+                </svg>
+                <span class="crisol-stat-label">Documentos</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+.crisol-hero {
+    position: relative;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0D1117;
+}
+
+.crisol-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.crisol-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(74, 172, 219, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74, 172, 219, 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+.crisol-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(232, 119, 34, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 30%, rgba(74, 172, 219, 0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 50% 100%, rgba(13, 17, 23, 0.8) 0%, transparent 60%);
+}
+
+.crisol-particles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.crisol-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 4rem 1.5rem;
+    max-width: 780px;
+    width: 100%;
+    animation: crisolFadeUp 0.8s ease both;
+}
+
+@keyframes crisolFadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.crisol-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(232, 119, 34, 0.1);
+    border: 1px solid rgba(232, 119, 34, 0.25);
+    color: #E87722;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 1.75rem;
+    animation: crisolFadeUp 0.8s 0.1s ease both;
+}
+
+.crisol-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: #E87722;
+    border-radius: 50%;
+    animation: crisolPulse 2s infinite;
+}
+
+@keyframes crisolPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.crisol-hero-title {
+    font-family: 'Syne', sans-serif !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    margin-bottom: 1.25rem !important;
+    animation: crisolFadeUp 0.8s 0.2s ease both;
+}
+
+.crisol-title-main {
+    display: block;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    color: #E87722;
+    letter-spacing: -0.02em;
+}
+
+.crisol-title-sub {
+    display: block;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #8B949E;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+.crisol-hero-description {
+    font-size: 1rem;
+    color: #8B949E;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    animation: crisolFadeUp 0.8s 0.3s ease both;
+}
+
+/* Search */
+.crisol-search-wrapper {
+    animation: crisolFadeUp 0.8s 0.4s ease both;
+    margin-bottom: 2.5rem;
+}
+
+.crisol-search-form {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.crisol-search-inner {
+    display: flex;
+    align-items: center;
+    background: rgba(22, 27, 34, 0.9);
+    border: 1px solid rgba(232, 119, 34, 0.25);
+    border-radius: 8px;
+    padding: 0.25rem 0.25rem 0.25rem 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    backdrop-filter: blur(8px);
+}
+
+.crisol-search-inner:focus-within {
+    border-color: rgba(232, 119, 34, 0.6);
+    box-shadow: 0 0 0 3px rgba(232, 119, 34, 0.12);
+}
+
+.crisol-search-icon {
+    width: 18px;
+    height: 18px;
+    color: #8B949E;
+    flex-shrink: 0;
+    margin-right: 0.75rem;
+}
+
+.crisol-search-input {
+    flex: 1;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    color: #E6EDF3 !important;
+    font-size: 0.9375rem !important;
+    font-family: 'DM Sans', sans-serif !important;
+    padding: 0.6rem 0 !important;
+    box-shadow: none !important;
+}
+
+.crisol-search-input::placeholder {
+    color: #484f58 !important;
+}
+
+.crisol-search-btn {
+    background: #E87722;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.25rem;
+    font-family: 'Syne', sans-serif !important;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    white-space: nowrap;
+}
+
+.crisol-search-btn:hover {
+    background: #C45E0A;
+    transform: translateY(-1px);
+}
+
+/* Stats */
+.crisol-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    animation: crisolFadeUp 0.8s 0.5s ease both;
+}
+
+.crisol-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    text-decoration: none !important;
+    color: #8B949E !important;
+    transition: color 0.2s ease;
+}
+
+.crisol-stat-item:hover {
+    color: #E87722 !important;
+}
+
+.crisol-stat-item svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    transition: stroke 0.2s ease;
+}
+
+.crisol-stat-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.crisol-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: #30363d;
+}
+
+@media (max-width: 640px) {
+    .crisol-stats {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .crisol-stat-divider { display: none; }
+    .crisol-stat-item { padding: 0.5rem 1rem; }
+}
+</style>
+
+<script>
+(function() {
+    const canvas = document.getElementById('crisolParticles');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animFrame;
+
+    function resize() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+
+    function createParticles() {
+        particles = [];
+        const count = Math.floor((canvas.width * canvas.height) / 18000);
+        for (let i = 0; i < count; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.3,
+                vy: (Math.random() - 0.5) * 0.3,
+                r: Math.random() * 1.5 + 0.5,
+                color: Math.random() > 0.6 ? '#E87722' : '#4AACDB',
+                alpha: Math.random() * 0.5 + 0.2
+            });
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 100) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(74, 172, 219, ${0.08 * (1 - dist / 100)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Draw particles
+        particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0) p.x = canvas.width;
+            if (p.x > canvas.width) p.x = 0;
+            if (p.y < 0) p.y = canvas.height;
+            if (p.y > canvas.height) p.y = 0;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.alpha;
+            ctx.fill();
+            ctx.globalAlpha = 1;
+        });
+
+        animFrame = requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', () => {
+        resize();
+        createParticles();
+    });
+
+    resize();
+    createParticles();
+    draw();
+})();
+</script>
+{% endblock %}

@@ -1,15 +1,184 @@
 <style>
-  {% block extra_css %}
-      {{ custom_theme.extra_css }}
-  {% endblock %}
+    {% block extra_css %}
+        {{ custom_theme.extra_css }}
+    {% endblock %}
 </style>
 {% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  .msgapi .gn-theme {
-    --ms-jumbotron-bg: #1a6e76;
-    --ms-primary: #a62ec1;
-    --ms-jumbotron-color: #a85252;
-    --ms-main-bg: #f9f9f9;
-  }
+    :root {
+        --crisol-orange: #E87722;
+        --crisol-orange-dark: #C45E0A;
+        --crisol-orange-light: #F9A155;
+        --crisol-blue: #4AACDB;
+        --crisol-blue-dark: #2A7FA8;
+        --crisol-red: #D32F2F;
+        --crisol-dark: #0D1117;
+        --crisol-dark-2: #161B22;
+        --crisol-dark-3: #1C2333;
+        --crisol-gray: #8B949E;
+        --crisol-light: #F0F6FC;
+    }
+
+    .msgapi .gn-theme {
+        --ms-primary: #E87722;
+        --ms-primary-contrast: #ffffff;
+        --ms-info: #4AACDB;
+        --ms-success: #3fb950;
+        --ms-warning: #d29922;
+        --ms-danger: #D32F2F;
+        --ms-main-color: #E6EDF3;
+        --ms-main-bg: #0D1117;
+        --ms-main-border-color: #30363d;
+        --ms-main-variant-color: #8B949E;
+        --ms-main-variant-bg: #161B22;
+        --ms-main-hover-color: #E6EDF3;
+        --ms-main-hover-bg: #1C2333;
+        --ms-placeholder-color: #8B949E;
+        --ms-placeholder-bg: #21262d;
+        --ms-disabled-color: #484f58;
+        --ms-disabled-bg: #161B22;
+        --ms-link-color: #E87722;
+        --ms-link-hover-color: #F9A155;
+        --ms-footer-bg: #0D1117;
+        --ms-footer-color: #8B949E;
+        --ms-footer-link-color: #E87722;
+        --ms-footer-link-hover-color: #F9A155;
+        --ms-jumbotron-bg: #0D1117;
+        --ms-jumbotron-color: #E6EDF3;
+        --ms-badge-bg: #E87722;
+        --ms-badge-color: #ffffff;
+        --ms-button-primary-bg: #E87722;
+        --ms-button-primary-border-color: #E87722;
+        --ms-button-primary-color: #ffffff;
+        --ms-button-primary-hover-bg: #C45E0A;
+        --ms-button-primary-hover-border-color: #C45E0A;
+    }
+
+    * {
+        font-family: 'DM Sans', sans-serif !important;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .gn-title, .gn-card-title,
+    .navbar-brand, .gn-brand {
+        font-family: 'Syne', sans-serif !important;
+    }
+
+    /* Navbar */
+    .gn-navbar,
+    nav.navbar,
+    .navbar {
+        background: rgba(13, 17, 23, 0.95) !important;
+        backdrop-filter: blur(12px) !important;
+        border-bottom: 1px solid rgba(232, 119, 34, 0.2) !important;
+        padding: 0.75rem 1.5rem !important;
+    }
+
+    .navbar-brand img {
+        height: 38px !important;
+        filter: brightness(1.1) !important;
+    }
+
+    .navbar .nav-link,
+    .gn-navbar .nav-link {
+        color: #8B949E !important;
+        font-weight: 400 !important;
+        font-size: 0.875rem !important;
+        letter-spacing: 0.02em !important;
+        transition: color 0.2s ease !important;
+        padding: 0.5rem 0.75rem !important;
+    }
+
+    .navbar .nav-link:hover,
+    .gn-navbar .nav-link:hover {
+        color: #E87722 !important;
+    }
+
+    .navbar .btn-primary,
+    .gn-navbar .btn-primary {
+        background: #E87722 !important;
+        border-color: #E87722 !important;
+        font-family: 'Syne', sans-serif !important;
+        font-weight: 600 !important;
+        font-size: 0.8rem !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
+        padding: 0.4rem 1rem !important;
+        border-radius: 4px !important;
+        transition: all 0.2s ease !important;
+    }
+
+    .navbar .btn-primary:hover {
+        background: #C45E0A !important;
+        border-color: #C45E0A !important;
+        transform: translateY(-1px) !important;
+    }
+
+    /* Cards */
+    .card, .gn-card {
+        background: #161B22 !important;
+        border: 1px solid #30363d !important;
+        border-radius: 8px !important;
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .card:hover, .gn-card:hover {
+        transform: translateY(-3px) !important;
+        border-color: rgba(232, 119, 34, 0.4) !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
+    }
+
+    /* Search bar */
+    .gn-search-bar input,
+    input[type="search"],
+    input[type="text"].form-control {
+        background: #161B22 !important;
+        border: 1px solid #30363d !important;
+        color: #E6EDF3 !important;
+        border-radius: 6px !important;
+    }
+
+    .gn-search-bar input:focus {
+        border-color: #E87722 !important;
+        box-shadow: 0 0 0 3px rgba(232, 119, 34, 0.15) !important;
+        outline: none !important;
+    }
+
+    /* Badges y tags */
+    .badge, .gn-badge {
+        background: rgba(232, 119, 34, 0.15) !important;
+        color: #E87722 !important;
+        border: 1px solid rgba(232, 119, 34, 0.3) !important;
+        font-weight: 500 !important;
+    }
+
+    /* Footer */
+    .gn-footer, footer {
+        background: #0D1117 !important;
+        border-top: 1px solid #30363d !important;
+        color: #8B949E !important;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #0D1117;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #30363d;
+        border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #E87722;
+    }
+
+    /* Selección de texto */
+    ::selection {
+        background: rgba(232, 119, 34, 0.3);
+        color: #E6EDF3;
+    }
 </style>
 {% endblock %}
