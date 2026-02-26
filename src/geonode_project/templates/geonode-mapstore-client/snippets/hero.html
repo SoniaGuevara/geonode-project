@@ -1,79 +1,32 @@
-{% load i18n %} {% load base_tags %} {% if custom_theme.jumbotron_bg and
-custom_theme.jumbotron_bg.url %}{% load static %}
+{% load i18n %}
+{% load base_tags %}
+
+{% if custom_theme.jumbotron_bg and custom_theme.jumbotron_bg.url %}
 <style>
-  #gn-hero {
-    background-image: url('{% static "img/paisaje_crisol.jpg" %}');
-    background-size: cover;
-    background-position: center 40%;
-    background-repeat: no-repeat;
-    position: relative;
-    min-height: 420px;
-  }
-
-  #gn-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(13, 42, 74, 0.72) 0%,
-      rgba(26, 63, 111, 0.65) 60%,
-      rgba(13, 42, 74, 0.8) 100%
-    );
-    z-index: 1;
-  }
-
-  #gn-hero .jumbotron {
-    position: relative;
-    z-index: 2;
-    background: transparent !important;
-    text-align: center;
-    padding: 6rem 2rem 4rem;
-  }
-
-  #gn-hero .jumbotron h1 {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 3rem;
-    font-weight: 800;
-    color: #ffffff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    margin-bottom: 0.75rem;
-    letter-spacing: 0.02em;
-  }
-
-  #gn-hero .jumbotron h1 .highlight {
-    color: #e87722;
-  }
-
-  #gn-hero .jumbotron p.hero-subtitle {
-    font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 300;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    max-width: 600px;
-    margin: 0 auto;
-  }
+    #gn-hero {
+        background-image: url('{{ custom_theme.jumbotron_bg.url }}');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
 </style>
+{% endif %}
 
 {% block extra_style %}{% endblock %}
 
 <div id="gn-hero" class="gn-hero">
-  <div class="jumbotron">
-    <div class="gn-hero-description">
-      {% if not custom_theme.jumbotron_welcome_hide %}
-      <h1><span class="highlight">GEOPORTAL</span> UNCUYO</h1>
-      <p class="hero-subtitle">
-        Esta Infraestructura de Datos Espaciales contribuye a un proceso global
-        de socialización y democratización de la información, permitiendo
-        acceder a datos, productos y servicios georreferenciados de la
-        Universidad Nacional de Cuyo, orientada tanto al almacenamiento,
-        estandarización y visualización de la cartografía digital así como la
-        consulta, uso y descarga de geodatos en las actividades de docencia,
-        investigación universitaria y en la sociedad en su conjunto
-      </p>
-      {% endif %}
+    <div class="jumbotron">
+        <div class="gn-hero-description">
+            {% if not custom_theme.jumbotron_welcome_hide %}
+                <h1>
+                    <span style="color:#E87722;font-family:'Syne',sans-serif;font-weight:800;">CRISOL</span>
+                    <span style="color:#E6EDF3;font-family:'Syne',sans-serif;font-weight:800;"> UNCUYO</span>
+                </h1>
+                <p style="color:#8B949E;font-family:'DM Sans',sans-serif;font-weight:300;font-size:1.1rem;">
+                    Infraestructura de Datos Espaciales · Universidad Nacional de Cuyo
+                </p>
+            {% endif %}
+        </div>
+        <p class="gn-hero-tools"></p>
     </div>
-    <p class="gn-hero-tools"></p>
-  </div>
 </div>

@@ -1,6 +1,7 @@
 {% load static %} {% load get_menu_json %} {% get_menu_json 'TOPBAR_MENU' as
 TOPBAR_MENU %} {% get_menu_json 'TOPBAR_MENU_LEFT' as TOPBAR_MENU_LEFT %} {%
-get_menu_json 'TOPBAR_MENU_RIGHT' as TOPBAR_MENU_RIGHT %}
+get_menu_json 'TOPBAR_MENU_RIGHT' as TOPBAR_MENU_RIGHT %} {% block extra_style
+%}{% endblock %}
 
 <nav
   id="gn-brand-navbar"
@@ -10,7 +11,6 @@ get_menu_json 'TOPBAR_MENU_RIGHT' as TOPBAR_MENU_RIGHT %}
     {% block logo %}
     <a
       href="/"
-      class="gn-brand-logo"
       style="
         display: flex;
         align-items: center;
@@ -18,31 +18,30 @@ get_menu_json 'TOPBAR_MENU_RIGHT' as TOPBAR_MENU_RIGHT %}
         text-decoration: none;
       "
     >
-      <img
-        src="{% static 'img/logo_crisol.png' %}"
-        alt="CRISOL UNCuyo"
-        style="height: 36px"
-      />
+      {% if custom_theme.logo and custom_theme.logo.url %}
+      <img src="{{ custom_theme.logo.url }}" style="height: 36px" />
+      {% else %}
       <span
         style="
           font-family: &quot;Syne&quot;, sans-serif;
           font-weight: 800;
           font-size: 1.1rem;
           color: #e87722;
+          letter-spacing: 0.05em;
         "
+        >CRISOL</span
       >
-        CRISOL
-      </span>
       <span
         style="
           font-family: &quot;Syne&quot;, sans-serif;
           font-weight: 400;
           font-size: 1.1rem;
           color: #8b949e;
+          letter-spacing: 0.05em;
         "
+        >UNCUYO</span
       >
-        UNCuyo
-      </span>
+      {% endif %}
     </a>
     {% endblock %} {% block left_menu %}
     <div
