@@ -21,8 +21,6 @@ get_menu_json 'TOPBAR_MENU_RIGHT' as TOPBAR_MENU_RIGHT %} {% block extra_style
       {% if custom_theme.logo and custom_theme.logo.url %}
       <img src="{{ custom_theme.logo.url }}" style="height: 36px" />
       {% else %}
-      <img src="{{ custom_theme.logo.url }}" style="height: 36px" />
-      {% endif %} {% if custom_theme.logo_text %}
       <span
         style="
           font-family: &quot;Syne&quot;, sans-serif;
