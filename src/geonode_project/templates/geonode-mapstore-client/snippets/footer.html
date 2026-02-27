@@ -1,10 +1,11 @@
 <div class="gn-footer-placeholder"></div>
-<footer class="gn-footer" style="background-color:#0d2a4a;border-top:3px solid #E87722;font-family:'Open Sans',sans-serif;padding:0;position:relative;">
+<footer class="gn-footer" style="background-color:#0d2a4a;border-top:3px solid #E87722;font-family:'Open Sans',sans-serif;padding:0;position:relative;display:block!important;">
 
-    <div style="max-width:1100px;margin:0 auto;padding:2.5rem 1.5rem 1.5rem;display:flex;flex-wrap:wrap;gap:2rem;">
+    <!-- Columnas -->
+    <div style="display:flex;flex-wrap:wrap;gap:2rem;max-width:1100px;margin:0 auto;padding:2.5rem 1.5rem 1.5rem;">
 
-        <!-- Columna 1: Marca -->
-        <div style="flex:1.5;min-width:200px;">
+        <!-- Marca -->
+        <div style="flex:1.5;min-width:180px;">
             <div style="font-family:'Montserrat',sans-serif;font-size:1.1rem;margin-bottom:0.5rem;">
                 <span style="color:#E87722;font-weight:800;">CRISOL</span>
                 <span style="color:#ffffff;font-weight:400;"> UNCUYO</span>
@@ -14,15 +15,15 @@
             </p>
         </div>
 
-        <!-- Columna 2: Contacto -->
+        <!-- Contacto -->
         <div style="flex:1;min-width:160px;">
             <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#E87722;margin-bottom:0.85rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(255,255,255,0.1);">Contacto</div>
-            <p style="font-size:0.85rem;color:#cbd5e0;margin-bottom:0.45rem;line-height:1.5;">Centro Universitario S/N, Mendoza</p>
+            <p style="font-size:0.85rem;color:#cbd5e0;margin:0 0 0.45rem;line-height:1.5;">Centro Universitario S/N, Mendoza</p>
             <a href="mailto:lmagni@uncu.edu.ar" style="display:block;font-size:0.85rem;color:#cbd5e0;text-decoration:none;margin-bottom:0.45rem;">lmagni@uncu.edu.ar</a>
-            <p style="font-size:0.85rem;color:#cbd5e0;margin-bottom:0;">+54 261 413-5000 int. 3122</p>
+            <p style="font-size:0.85rem;color:#cbd5e0;margin:0;">+54 261 413-5000 int. 3122</p>
         </div>
 
-        <!-- Columna 3: Recursos -->
+        <!-- Recursos -->
         <div style="flex:1;min-width:140px;">
             <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#E87722;margin-bottom:0.85rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(255,255,255,0.1);">Recursos</div>
             <a href="/catalogue/#/?resource_type=dataset" style="display:block;font-size:0.85rem;color:#cbd5e0;text-decoration:none;margin-bottom:0.45rem;">Datasets</a>
@@ -34,13 +35,15 @@
 
     </div>
 
-    <!-- Bottom bar: copyright centrado -->
-    <div style="max-width:1100px;margin:0 auto;padding:1rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);text-align:center;">
-        <p style="font-size:0.75rem;color:#4a6380;margin:0 0 0.4rem;">© CRISOL UNCUYO · Universidad Nacional de Cuyo · Todos los derechos reservados</p>
-        <div style="display:flex;gap:1.5rem;justify-content:center;">
-            <a href="https://geonode.org/" target="_blank" style="font-size:0.75rem;color:#4a6380;text-decoration:none;">geonode.org</a>
-            <a href="/developer/" style="font-size:0.75rem;color:#4a6380;text-decoration:none;">Developers</a>
-            <a href="/about/" style="font-size:0.75rem;color:#4a6380;text-decoration:none;">About</a>
+    <!-- Copyright: bloque separado, no dentro del flex de columnas -->
+    <div style="display:block;width:100%;border-top:1px solid rgba(255,255,255,0.08);">
+        <div style="max-width:1100px;margin:0 auto;padding:1rem 1.5rem;text-align:center;">
+            <p style="font-size:0.75rem;color:#4a6380;margin:0 0 0.4rem;">© CRISOL UNCUYO · Universidad Nacional de Cuyo · Todos los derechos reservados</p>
+            <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
+                <a href="https://geonode.org/" target="_blank" style="font-size:0.75rem;color:#4a6380;text-decoration:none;">geonode.org</a>
+                <a href="/developer/" style="font-size:0.75rem;color:#4a6380;text-decoration:none;">Developers</a>
+                <a href="/about/" style="font-size:0.75rem;color:#4a6380;text-decoration:none;">About</a>
+            </div>
         </div>
     </div>
 
