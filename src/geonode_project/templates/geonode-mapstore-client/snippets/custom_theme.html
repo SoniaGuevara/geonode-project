@@ -280,7 +280,7 @@ body.page-map-viewer .gn-footer {
         /* Detectar por hash (SPA: /catalogue/#/dataset/1) */
         var hash = window.location.hash || '';
         var pathname = window.location.pathname || '';
-        var hashPatterns = ['/dataset/', '/map/', '/document/', '/geostory/'];
+        var hashPatterns = ['/dataset/', '/map/', '/document/', '/geostory/', '/metadata/', '/edit', '/replace', '/upload'];
         var pathPatterns = ['/datasets/', '/maps/', '/documents/', '/geostories/'];
         var inHash = hashPatterns.some(function(p){ return hash.indexOf(p) > -1; });
         var inPath = pathPatterns.some(function(p){ return pathname.indexOf(p) > -1; });
