@@ -1,76 +1,172 @@
 <div class="gn-footer-placeholder"></div>
-<footer class="gn-footer" style="background-color:#0D1117;border-top:1px solid #30363d;padding:2rem;">
-    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;">
+<footer class="gn-footer" style="background-color:#0d2a4a;border-top:3px solid #E87722;padding:2.5rem 1.5rem 1rem;font-family:'Open Sans',sans-serif;">
+
+    <style>
+        .crisol-footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .crisol-footer-col-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #E87722;
+            margin-bottom: 0.85rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .crisol-footer-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .crisol-footer-brand .highlight { color: #E87722; font-weight: 800; }
+        .crisol-footer-brand .normal   { color: #ffffff;  font-weight: 400; }
+
+        .crisol-footer-desc {
+            font-size: 0.82rem;
+            color: #8fa8c0;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .crisol-footer-link {
+            display: block;
+            font-size: 0.85rem;
+            color: #cbd5e0;
+            text-decoration: none;
+            margin-bottom: 0.45rem;
+            transition: color 0.2s;
+        }
+
+        .crisol-footer-link:hover { color: #E87722 !important; }
+
+        .crisol-footer-text {
+            font-size: 0.85rem;
+            color: #cbd5e0;
+            margin-bottom: 0.45rem;
+            line-height: 1.5;
+        }
+
+        .crisol-footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .crisol-footer-copy {
+            font-size: 0.75rem;
+            color: #4a6380;
+        }
+
+        .crisol-footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .crisol-footer-bottom-links a {
+            font-size: 0.75rem;
+            color: #4a6380;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .crisol-footer-bottom-links a:hover { color: #E87722; }
+
+        /* ── Mobile ── */
+        @media (max-width: 640px) {
+            .crisol-footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+
+            /* Marca ocupa toda la fila */
+            .crisol-footer-col-brand {
+                grid-column: 1 / -1;
+            }
+
+            .crisol-footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .crisol-footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <div class="crisol-footer-grid">
 
         <!-- Columna 1: Marca -->
-        <div>
-            <div style="margin-bottom:0.75rem;">
-                <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:#E87722;">CRISOL</span>
-                <span style="font-family:'Syne',sans-serif;font-weight:400;font-size:1.1rem;color:#8B949E;margin-left:0.3rem;">UNCUYO</span>
+        <div class="crisol-footer-col-brand">
+            <div class="crisol-footer-brand">
+                <span class="highlight">CRISOL</span>
+                <span class="normal"> UNCUYO</span>
             </div>
-            <p style="font-size:0.8rem;color:#8B949E;font-family:'DM Sans',sans-serif;line-height:1.6;margin:0;">
+            <p class="crisol-footer-desc">
                 Infraestructura de Datos Espaciales de la Universidad Nacional de Cuyo.
             </p>
         </div>
 
-        <!-- Columna 2: Datos -->
+        <!-- Columna 2: Contacto -->
         <div>
-            <div style="font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#E87722;margin-bottom:0.75rem;">Contacto</div>
-            <ul style="list-style:none;padding:0;margin:0;">
-                <li style="font-size:0.8rem;color:#8B949E;font-family:'DM Sans',sans-serif;margin-bottom:0.4rem;">Centro Universitario S/N, Mendoza</li>
-                <li style="font-size:0.8rem;color:#8B949E;font-family:'DM Sans',sans-serif;margin-bottom:0.4rem;">
-                    <a href="mailto:lmagni@uncu.edu.ar" style="color:#8B949E;text-decoration:none;transition:color 0.2s;"
-                       onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#8B949E'">
-                        lmagni@uncu.edu.ar
-                    </a>
-                </li>
-                <li style="font-size:0.8rem;color:#8B949E;font-family:'DM Sans',sans-serif;">+54 261 413-5000 int. 3122</li>
-            </ul>
+            <div class="crisol-footer-col-title">Contacto</div>
+            <p class="crisol-footer-text">Centro Universitario S/N, Mendoza</p>
+            <a href="mailto:lmagni@uncu.edu.ar" class="crisol-footer-link">lmagni@uncu.edu.ar</a>
+            <p class="crisol-footer-text">+54 261 413-5000 int. 3122</p>
         </div>
 
-        <!-- Columna 3: Links -->
+        <!-- Columna 3: Recursos -->
         <div>
-            <div style="font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#E87722;margin-bottom:0.75rem;">Recursos</div>
-            <ul style="list-style:none;padding:0;margin:0;">
-                <li style="margin-bottom:0.4rem;">
-                    <a href="/catalogue/#/" style="font-size:0.8rem;color:#8B949E;font-family:'DM Sans',sans-serif;text-decoration:none;transition:color 0.2s;"
-                       onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#8B949E'">Datasets</a>
-                </li>
-                <li style="margin-bottom:0.4rem;">
-                    <a href="/catalogue/#/?category__identifier__in=maps" style="font-size:0.8rem;color:#8B949E;font-family:'DM Sans',sans-serif;text-decoration:none;transition:color 0.2s;"
-                       onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#8B949E'">Mapas</a>
-                </li>
-                <li style="margin-bottom:0.4rem;">
-                    <a href="/catalogue/#/?category__identifier__in=documents" style="font-size:0.8rem;color:#8B949E;font-family:'DM Sans',sans-serif;text-decoration:none;transition:color 0.2s;"
-                       onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#8B949E'">Documentos</a>
-                </li>
-                <li>
-                    <a href="https://geonode.org/" target="_blank" style="font-size:0.8rem;color:#8B949E;font-family:'DM Sans',sans-serif;text-decoration:none;transition:color 0.2s;"
-                       onmouseover="this.style.color='#E87722'" onmouseout="this.style.color='#8B949E'">Powered by GeoNode</a>
-                </li>
-            </ul>
+            <div class="crisol-footer-col-title">Recursos</div>
+            <a href="/catalogue/#/?resource_type=dataset" class="crisol-footer-link">Datasets</a>
+            <a href="/catalogue/#/?resource_type=map" class="crisol-footer-link">Mapas</a>
+            <a href="/catalogue/#/?resource_type=document" class="crisol-footer-link">Documentos</a>
+            <a href="/people/" class="crisol-footer-link">Personas</a>
+            <a href="/groups/" class="crisol-footer-link">Grupos</a>
+        </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="crisol-footer-bottom">
+        <span class="crisol-footer-copy">© CRISOL UNCUYO · Universidad Nacional de Cuyo · Todos los derechos reservados</span>
+        <div class="crisol-footer-bottom-links">
+            <a href="https://geonode.org/" target="_blank">geonode.org</a>
+            <a href="/developer/">Developers</a>
+            <a href="/about/">About</a>
         </div>
     </div>
 
-    <!-- Copyright -->
-    <div style="max-width:1100px;margin:1.5rem auto 0;padding-top:1rem;border-top:1px solid #30363d;text-align:center;">
-        <span style="font-size:0.75rem;color:#484f58;font-family:'DM Sans',sans-serif;">
-            © CRISOL UNCUYO · Universidad Nacional de Cuyo · Todos los derechos reservados
-        </span>
-    </div>
 </footer>
 
 <script>
-    (function () {
-        const footer = document.querySelector('.gn-footer');
-        const footerPlaceholder = document.querySelector('.gn-footer-placeholder');
-        function resize() {
-            if (footerPlaceholder && footer) {
-                footerPlaceholder.style.height = footer.clientHeight + 'px';
-            }
-        }
-        window.addEventListener('resize', resize);
-        window.addEventListener('DOMContentLoaded', resize);
-        resize();
-    })();
+(function () {
+    const footer = document.querySelector('.gn-footer');
+    const placeholder = document.querySelector('.gn-footer-placeholder');
+    function resize() {
+        if (placeholder && footer) placeholder.style.height = footer.clientHeight + 'px';
+    }
+    window.addEventListener('resize', resize);
+    window.addEventListener('DOMContentLoaded', resize);
+    resize();
+})();
 </script>
