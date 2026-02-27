@@ -232,6 +232,16 @@ body .gn-footer ul {
 .msgapi .gn-footer-placeholder,
 .gn-footer-placeholder { display: none !important; }
 
+/* ── Ocultar footer en visores de datasets, mapas y documentos ── */
+.page-dataset-viewer .gn-footer,
+.page-map-viewer .gn-footer,
+.page-document-viewer .gn-footer,
+.page-geostory-viewer .gn-footer,
+body.page-dataset-viewer .gn-footer,
+body.page-map-viewer .gn-footer {
+    display: none !important;
+}
+
 .gn-footer a {
     color: #cbd5e0 !important;
     font-size: 0.85rem;
@@ -266,13 +276,41 @@ body .gn-footer ul {
             placeholder.style.setProperty('display', 'none', 'important');
         }
     }
-    document.addEventListener('DOMContentLoaded', applyFix);
+    function hideFooterInViewer() {
+        /* Ocultar footer en páginas de visor */
+        var viewerPages = [
+            'page-dataset-viewer', 'page-map-viewer',
+            'page-document-viewer', 'page-geostory-viewer'
+        ];
+        var body = document.body;
+        var isViewer = viewerPages.some(function(cls) {
+            return body.classList.contains(cls);
+        });
+        /* También detectar por URL */
+        var url = window.location.pathname;
+        var isViewerUrl = (
+            url.indexOf('/datasets/') > -1 ||
+            url.indexOf('/maps/') > -1 ||
+            url.indexOf('/documents/') > -1 ||
+            url.indexOf('/geostories/') > -1
+        );
+        var footer = document.querySelector('.gn-footer');
+        if (footer && (isViewer || isViewerUrl)) {
+            footer.style.setProperty('display', 'none', 'important');
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
-        var observer = new MutationObserver(applyFix);
+        applyFix();
+        hideFooterInViewer();
+        var observer = new MutationObserver(function() {
+            applyFix();
+            hideFooterInViewer();
+        });
         observer.observe(document.body, { childList: true, subtree: true });
-        setTimeout(applyFix, 500);
-        setTimeout(applyFix, 1500);
-        setTimeout(applyFix, 3000);
+        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 500);
+        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 1500);
+        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 3000);
     });
 })();
 </script>
