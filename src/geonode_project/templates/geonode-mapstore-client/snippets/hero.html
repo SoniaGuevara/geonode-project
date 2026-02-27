@@ -1,30 +1,23 @@
 {% load i18n %}
 {% load base_tags %}
 
-{% if custom_theme.jumbotron_bg and custom_theme.jumbotron_bg.url %}
-<style>
-    #gn-hero {
-        background-image: url('{{ custom_theme.jumbotron_bg.url }}');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-</style>
-{% endif %}
-
-{% block extra_style %}{% endblock %}
-
 <div id="gn-hero" class="gn-hero">
     <div class="jumbotron">
         <div class="gn-hero-description">
             {% if not custom_theme.jumbotron_welcome_hide %}
                 <h1>
-                    <span style="color:#E87722;font-family:'Syne',sans-serif;font-weight:800;">CRISOL</span>
-                    <span style="color:#E6EDF3;font-family:'Syne',sans-serif;font-weight:800;"> UNCUYO</span>
+                    <span class="highlight">CRISOL</span> UNCUYO
                 </h1>
-                <p style="color:#8B949E;font-family:'DM Sans',sans-serif;font-weight:300;font-size:1.1rem;">
-                    Infraestructura de Datos Espaciales · Universidad Nacional de Cuyo
+                <p class="hero-subtitle">
+                    Infraestructura de Datos Espaciales de la Universidad Nacional de Cuyo.
                 </p>
+                <div class="gn-hero-search">
+                    <input type="text" placeholder="Buscar capas, mapas, documentos..."
+                        onkeypress="if(event.key==='Enter'){window.location='/catalogue/#/?q='+encodeURIComponent(this.value)}">
+                    <button onclick="var q=this.previousElementSibling.value;window.location='/catalogue/#/?q='+encodeURIComponent(q)">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
             {% endif %}
         </div>
         <p class="gn-hero-tools"></p>

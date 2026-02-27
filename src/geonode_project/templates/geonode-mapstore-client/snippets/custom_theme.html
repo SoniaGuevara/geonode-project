@@ -1,176 +1,217 @@
+{% if custom_theme.extra_css %}
+<style>{{ custom_theme.extra_css }}</style>
+{% endif %}
+
 <style>
-    {% block extra_css %}
-        {{ custom_theme.extra_css }}
-    {% endblock %}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@500;700;800&display=swap');
 
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+.msgapi .gn-theme {
+    --ms-primary:              #1a3f6f;
+    --ms-primary-contrast:     #ffffff;
+    --ms-main-color:           #2c3e50;
+    --ms-main-bg:              #ffffff;
+    --ms-main-border-color:    #e0e4e8;
+    --ms-main-variant-bg:      #f4f6f8;
+    --ms-main-hover-bg:        #f4f6f8;
+    --ms-jumbotron-color:      #ffffff;
+    --ms-jumbotron-bg:         #0d2a4a;
+    --ms-footer-color:         #cbd5e0;
+    --ms-footer-bg:            #0d2a4a;
+    --ms-footer-link-color:    #ffffff;
+    --ms-footer-link-hover-color: #E87722;
+    --ms-link-color:           #1a3f6f;
+    --ms-link-hover-color:     #E87722;
+    --ms-button-primary-bg:            #1a3f6f;
+    --ms-button-primary-border-color:  #1a3f6f;
+    --ms-button-primary-hover-bg:      #2a5f8f;
+    --ms-font-family-base:     'Open Sans', sans-serif;
+    --ms-font-family-sans-serif: 'Open Sans', sans-serif;
+}
 
-    .msgapi .gn-theme {
-        --ms-primary: #E87722;
-        --ms-primary-contrast: #ffffff;
-        --ms-main-color: #E6EDF3;
-        --ms-main-bg: #161B22;
-        --ms-main-border-color: #30363d;
-        --ms-main-variant-bg: #1C2333;
-        --ms-main-hover-bg: #1C2333;
-        --ms-jumbotron-color: #ffffff;
-        --ms-jumbotron-bg: #0D1117;
-        --ms-footer-color: #8B949E;
-        --ms-footer-bg: #0D1117;
-        --ms-footer-link-color: #E87722;
-        --ms-footer-link-hover-color: #F9A155;
-        --ms-link-color: #E87722;
-        --ms-link-hover-color: #F9A155;
-        --ms-button-primary-bg: #E87722;
-        --ms-button-primary-border-color: #E87722;
-        --ms-button-primary-hover-bg: #C45E0A;
-        --ms-button-primary-hover-border-color: #C45E0A;
-        --ms-font-family-base: 'DM Sans', sans-serif;
-        --ms-font-family-sans-serif: 'DM Sans', sans-serif;
-    }
+body.msgapi {
+    background-color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    color: #2c3e50;
+}
 
-    /* Navbar */
-    #gn-brand-navbar {
-        background-color: #0D1117 !important;
-        border-bottom: 1px solid rgba(232,119,34,0.3) !important;
-    }
+.gn-page-wrapper {
+    background-color: #ffffff;
+}
 
-    #gn-brand-navbar a {
-        color: #E6EDF3 !important;
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 500;
-        transition: color 0.2s;
-    }
+/* ── Navbar blanco limpio ── */
+#gn-brand-navbar {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e0e4e8 !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 0.5rem 1.5rem !important;
+}
 
-    #gn-brand-navbar a:hover {
-        color: #E87722 !important;
-        text-decoration: none;
-    }
+#gn-brand-navbar a {
+    color: #1a3f6f !important;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+}
 
-    #gn-brand-navbar .gn-brand-navbar-menu li a {
-        font-size: 0.875rem;
-    }
+#gn-brand-navbar a:hover {
+    color: #E87722 !important;
+    text-decoration: none;
+}
 
-    /* Botones navbar */
-    #gn-brand-navbar .btn {
-        background-color: transparent !important;
-        border: 1px solid rgba(232,119,34,0.5) !important;
-        color: #E87722 !important;
-        border-radius: 6px;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 0.8rem;
-        transition: all 0.2s;
-    }
+/* Ocultar menú izquierdo y barra de búsqueda del navbar */
+#gn-brand-navbar .gn-brand-navbar-left-menu-container,
+#gn-brand-navbar .gn-search-bar {
+    display: none !important;
+}
 
-    #gn-brand-navbar .btn:hover {
-        background-color: #E87722 !important;
-        color: #ffffff !important;
-    }
+/* Botones Register / Sign in */
+#gn-brand-navbar .btn {
+    background-color: #1a3f6f !important;
+    border: none !important;
+    color: #ffffff !important;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 0.9rem;
+    transition: background-color 0.2s;
+}
 
-    /* Hero */
-    #gn-hero {
-        background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #0D1117 100%) !important;
-        position: relative;
-        overflow: hidden;
-    }
+#gn-brand-navbar .btn:hover {
+    background-color: #2a5f8f !important;
+}
 
-    #gn-hero::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background:
-            radial-gradient(ellipse 60% 50% at 20% 50%, rgba(232,119,34,0.08) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 60% at 80% 50%, rgba(74,172,219,0.06) 0%, transparent 70%);
-        pointer-events: none;
-    }
+/* ── Hero con imagen del campus ── */
+#gn-hero {
+    background-image: url('/static/img/paisaje_crisol.jpg');
+    background-size: cover;
+    background-position: center 40%;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 440px;
+}
 
-    #gn-hero .jumbotron {
-        background: transparent !important;
-        text-align: center;
-        padding: 5rem 2rem;
-    }
+#gn-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(10,30,60,0.75) 0%,
+        rgba(20,50,90,0.68) 60%,
+        rgba(10,30,60,0.80) 100%
+    );
+    z-index: 1;
+}
 
-    #gn-hero .jumbotron h1 {
-        font-family: 'Syne', sans-serif !important;
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: #E6EDF3;
-        letter-spacing: -0.02em;
-        margin-bottom: 1rem;
-    }
+#gn-hero .jumbotron {
+    position: relative;
+    z-index: 2;
+    background: transparent !important;
+    text-align: center;
+    padding: 5rem 2rem 3.5rem;
+}
 
-    #gn-hero .jumbotron p {
-        font-family: 'DM Sans', sans-serif;
-        font-size: 1.1rem;
-        color: #8B949E;
-        font-weight: 300;
-    }
+#gn-hero .jumbotron h1 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.02em;
+}
 
-    /* Search bar */
-    .gn-search-bar input,
-    #gn-search-bar input {
-        background-color: #1C2333 !important;
-        border: 1px solid #30363d !important;
-        color: #E6EDF3 !important;
-        border-radius: 8px;
-        font-family: 'DM Sans', sans-serif;
-    }
+#gn-hero .jumbotron h1 .highlight {
+    color: #E87722;
+}
 
-    .gn-search-bar input:focus,
-    #gn-search-bar input:focus {
-        border-color: #E87722 !important;
-        box-shadow: 0 0 0 3px rgba(232,119,34,0.15) !important;
-        outline: none;
-    }
+#gn-hero .jumbotron p.hero-subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.88);
+    font-weight: 300;
+    margin: 0 auto 2rem;
+    max-width: 560px;
+}
 
-    /* Cards */
-    .gn-card, .gn-resource-card {
-        background-color: #161B22 !important;
-        border: 1px solid #30363d !important;
-        border-radius: 10px !important;
-        transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s !important;
-    }
+/* Barra de búsqueda grande en el hero */
+.gn-hero-search {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
 
-    .gn-card:hover, .gn-resource-card:hover {
-        border-color: rgba(232,119,34,0.5) !important;
-        transform: translateY(-3px) !important;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
-    }
+.gn-hero-search input {
+    flex: 1;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+    color: #2c3e50;
+    background: #ffffff;
+}
 
-    /* Página general */
-    body.msgapi {
-        background-color: #0D1117;
-        font-family: 'DM Sans', sans-serif;
-    }
+.gn-hero-search button {
+    background-color: #E87722;
+    border: none;
+    padding: 0.9rem 1.6rem;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
 
-    .gn-page-wrapper {
-        background-color: #0D1117;
-    }
+.gn-hero-search button:hover {
+    background-color: #C45E0A;
+}
 
-    /* Footer */
-    .gn-footer {
-        background-color: #0D1117 !important;
-        border-top: 1px solid #30363d;
-    }
+/* ── Cards ── */
+.gn-card, .gn-resource-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e4e8 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+}
 
-    .gn-footer a {
-        color: #8B949E !important;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 0.85rem;
-        transition: color 0.2s;
-    }
+.gn-card:hover, .gn-resource-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+    border-color: #4a8fc0 !important;
+}
 
-    .gn-footer a:hover {
-        color: #E87722 !important;
-    }
+/* ── Footer ── */
+.gn-footer {
+    background-color: #0d2a4a !important;
+    border-top: 3px solid #E87722;
+    position: relative !important;
+}
 
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0D1117; }
-    ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #E87722; }
+.gn-footer-placeholder {
+    display: none !important;
+}
 
-    ::selection { background: rgba(232,119,34,0.3); color: #E6EDF3; }
+.gn-footer a {
+    color: #cbd5e0 !important;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.gn-footer a:hover {
+    color: #E87722 !important;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f4f6f8; }
+::-webkit-scrollbar-thumb { background: #4a8fc0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #E87722; }
+
+::selection { background: rgba(232,119,34,0.2); color: #2c3e50; }
 </style>
-
-{% block content %}{% endblock %}
