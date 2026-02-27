@@ -29,9 +29,11 @@
             </ul>
         </div>
 
-        <!-- Derecha: Register + Sign in + hamburguesa -->
+        <!-- Derecha: Register + Sign in (solo desktop) + hamburguesa -->
         <div style="display:flex;align-items:center;gap:0.6rem;">
-            {% include './brand_navbar_default_right_menu_items.html' %}
+            <div id="crisol-auth-btns" style="display:flex;align-items:center;gap:0.5rem;">
+                {% include './brand_navbar_default_right_menu_items.html' %}
+            </div>
 
             <!-- Botón hamburguesa -->
             <button id="crisol-menu-btn"

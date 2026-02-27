@@ -34,11 +34,9 @@ body.msgapi {
     color: #2c3e50;
 }
 
-.gn-page-wrapper {
-    background-color: #ffffff;
-}
+.gn-page-wrapper { background-color: #ffffff; }
 
-/* ── Navbar blanco limpio ── */
+/* ── Navbar ── */
 #gn-brand-navbar {
     background-color: #ffffff !important;
     border-bottom: 1px solid #e0e4e8 !important;
@@ -59,13 +57,26 @@ body.msgapi {
     text-decoration: none;
 }
 
-/* Ocultar menú izquierdo y barra de búsqueda del navbar */
+/* Ocultar menú izquierdo y search bar del navbar */
 #gn-brand-navbar .gn-brand-navbar-left-menu-container,
 #gn-brand-navbar .gn-search-bar {
     display: none !important;
 }
 
-/* Botones Register / Sign in */
+/* Register / Sign in: solo visible en desktop */
+#crisol-auth-btns {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    #crisol-auth-btns {
+        display: none !important;
+    }
+}
+
+/* Botones navbar */
 #gn-brand-navbar .btn {
     background-color: #1a3f6f !important;
     border: none !important;
@@ -81,7 +92,7 @@ body.msgapi {
     background-color: #2a5f8f !important;
 }
 
-/* ── Hero con imagen del campus ── */
+/* ── Hero ── */
 #gn-hero {
     background-image: url('/static/img/paisaje_crisol.jpg');
     background-size: cover;
@@ -109,7 +120,7 @@ body.msgapi {
     z-index: 2;
     background: transparent !important;
     text-align: center;
-    padding: 5rem 2rem 3.5rem;
+    padding: 5rem 1.5rem 3.5rem;
 }
 
 #gn-hero .jumbotron h1 {
@@ -122,9 +133,7 @@ body.msgapi {
     letter-spacing: 0.02em;
 }
 
-#gn-hero .jumbotron h1 .highlight {
-    color: #E87722;
-}
+#gn-hero .jumbotron h1 .highlight { color: #E87722; }
 
 #gn-hero .jumbotron p.hero-subtitle {
     font-family: 'Open Sans', sans-serif;
@@ -135,7 +144,7 @@ body.msgapi {
     max-width: 560px;
 }
 
-/* Barra de búsqueda grande en el hero */
+/* Barra de búsqueda */
 .gn-hero-search {
     max-width: 680px;
     margin: 0 auto;
@@ -147,7 +156,8 @@ body.msgapi {
 
 .gn-hero-search input {
     flex: 1;
-    padding: 0.9rem 1.5rem;
+    min-width: 0;         /* evita que se desborde en mobile */
+    padding: 0.9rem 1.2rem;
     font-size: 1rem;
     border: none;
     outline: none;
@@ -157,17 +167,23 @@ body.msgapi {
 }
 
 .gn-hero-search button {
+    flex-shrink: 0;       /* nunca se achica */
     background-color: #E87722;
     border: none;
-    padding: 0.9rem 1.6rem;
+    padding: 0.9rem 1.4rem;
     cursor: pointer;
     color: #ffffff;
     font-size: 1rem;
     transition: background-color 0.2s;
 }
 
-.gn-hero-search button:hover {
-    background-color: #C45E0A;
+.gn-hero-search button:hover { background-color: #C45E0A; }
+
+@media (max-width: 480px) {
+    #gn-hero .jumbotron h1 { font-size: 2rem; }
+    #gn-hero .jumbotron { padding: 4rem 1rem 2.5rem; }
+    .gn-hero-search input { padding: 0.8rem 1rem; font-size: 0.9rem; }
+    .gn-hero-search button { padding: 0.8rem 1.1rem; font-size: 0.9rem; }
 }
 
 /* ── Cards ── */
@@ -192,20 +208,15 @@ body.msgapi {
     position: relative !important;
 }
 
-.gn-footer-placeholder {
-    display: none !important;
-}
+.gn-footer-placeholder { display: none !important; }
 
 .gn-footer a {
     color: #cbd5e0 !important;
-    font-family: 'Open Sans', sans-serif;
     font-size: 0.85rem;
     transition: color 0.2s;
 }
 
-.gn-footer a:hover {
-    color: #E87722 !important;
-}
+.gn-footer a:hover { color: #E87722 !important; }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 6px; }
