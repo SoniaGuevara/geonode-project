@@ -276,41 +276,45 @@ body.page-map-viewer .gn-footer {
             placeholder.style.setProperty('display', 'none', 'important');
         }
     }
+    function isViewerPage() {
+        /* Detectar por hash (SPA: /catalogue/#/dataset/1) */
+        var hash = window.location.hash || '';
+        var pathname = window.location.pathname || '';
+        var hashPatterns = ['/dataset/', '/map/', '/document/', '/geostory/'];
+        var pathPatterns = ['/datasets/', '/maps/', '/documents/', '/geostories/'];
+        var inHash = hashPatterns.some(function(p){ return hash.indexOf(p) > -1; });
+        var inPath = pathPatterns.some(function(p){ return pathname.indexOf(p) > -1; });
+        /* Detectar por clases del body */
+        var viewerClasses = ['page-dataset-viewer','page-map-viewer','page-document-viewer','page-geostory-viewer'];
+        var inBody = viewerClasses.some(function(c){ return document.body.classList.contains(c); });
+        return inHash || inPath || inBody;
+    }
+
     function hideFooterInViewer() {
-        /* Ocultar footer en páginas de visor */
-        var viewerPages = [
-            'page-dataset-viewer', 'page-map-viewer',
-            'page-document-viewer', 'page-geostory-viewer'
-        ];
-        var body = document.body;
-        var isViewer = viewerPages.some(function(cls) {
-            return body.classList.contains(cls);
-        });
-        /* También detectar por URL */
-        var url = window.location.pathname;
-        var isViewerUrl = (
-            url.indexOf('/datasets/') > -1 ||
-            url.indexOf('/maps/') > -1 ||
-            url.indexOf('/documents/') > -1 ||
-            url.indexOf('/geostories/') > -1
-        );
         var footer = document.querySelector('.gn-footer');
-        if (footer && (isViewer || isViewerUrl)) {
+        if (!footer) return;
+        if (isViewerPage()) {
             footer.style.setProperty('display', 'none', 'important');
+        } else {
+            /* Restaurar en páginas normales */
+            footer.style.removeProperty('display');
         }
     }
 
     document.addEventListener('DOMContentLoaded', function() {
         applyFix();
         hideFooterInViewer();
+        /* Escuchar cambios de hash (navegación SPA) */
+        window.addEventListener('hashchange', hideFooterInViewer);
+        window.addEventListener('popstate', hideFooterInViewer);
         var observer = new MutationObserver(function() {
             applyFix();
             hideFooterInViewer();
         });
         observer.observe(document.body, { childList: true, subtree: true });
-        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 500);
-        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 1500);
-        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 3000);
+        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 300);
+        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 1000);
+        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 2500);
     });
 })();
 </script>
