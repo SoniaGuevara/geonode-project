@@ -1,83 +1,95 @@
+{% load static %}
+<link
+  rel="preload"
+  as="image"
+  href="{% static 'img/paisaje_crisol.jpg' %}"
+  fetchpriority="high"
+/>
+
 {% if custom_theme.extra_css %}
-<style>{{ custom_theme.extra_css }}</style>
+<style>
+  {{ custom_theme.extra_css }}
+</style>
 {% endif %}
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@500;700;800&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@500;700;800&display=swap");
 
-.msgapi .gn-theme {
-    --ms-primary:              #1a3f6f;
-    --ms-primary-contrast:     #ffffff;
-    --ms-main-color:           #2c3e50;
-    --ms-main-bg:              #ffffff;
-    --ms-main-border-color:    #e0e4e8;
-    --ms-main-variant-bg:      #f4f6f8;
-    --ms-main-hover-bg:        #f4f6f8;
-    --ms-jumbotron-color:      #ffffff;
-    --ms-jumbotron-bg:         #0d2a4a;
-    --ms-footer-color:         #cbd5e0;
-    --ms-footer-bg:            #0d2a4a;
-    --ms-footer-link-color:    #ffffff;
-    --ms-footer-link-hover-color: #E87722;
-    --ms-link-color:           #1a3f6f;
-    --ms-link-hover-color:     #E87722;
-    --ms-button-primary-bg:            #1a3f6f;
-    --ms-button-primary-border-color:  #1a3f6f;
-    --ms-button-primary-hover-bg:      #2a5f8f;
-    --ms-font-family-base:     'Open Sans', sans-serif;
-    --ms-font-family-sans-serif: 'Open Sans', sans-serif;
-}
+  .msgapi .gn-theme {
+    --ms-primary: #1a3f6f;
+    --ms-primary-contrast: #ffffff;
+    --ms-main-color: #2c3e50;
+    --ms-main-bg: #ffffff;
+    --ms-main-border-color: #e0e4e8;
+    --ms-main-variant-bg: #f4f6f8;
+    --ms-main-hover-bg: #f4f6f8;
+    --ms-jumbotron-color: #ffffff;
+    --ms-jumbotron-bg: #0d2a4a;
+    --ms-footer-color: #cbd5e0;
+    --ms-footer-bg: #0d2a4a;
+    --ms-footer-link-color: #ffffff;
+    --ms-footer-link-hover-color: #e87722;
+    --ms-link-color: #1a3f6f;
+    --ms-link-hover-color: #e87722;
+    --ms-button-primary-bg: #1a3f6f;
+    --ms-button-primary-border-color: #1a3f6f;
+    --ms-button-primary-hover-bg: #2a5f8f;
+    --ms-font-family-base: "Open Sans", sans-serif;
+    --ms-font-family-sans-serif: "Open Sans", sans-serif;
+  }
 
-body.msgapi {
+  body.msgapi {
     background-color: #ffffff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: #2c3e50;
-}
+  }
 
-.gn-page-wrapper { background-color: #ffffff; }
+  .gn-page-wrapper {
+    background-color: #ffffff;
+  }
 
-/* ── Navbar ── */
-#gn-brand-navbar {
+  /* ── Navbar ── */
+  #gn-brand-navbar {
     background-color: #ffffff !important;
     border-bottom: 1px solid #e0e4e8 !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     padding: 0.5rem 1.5rem !important;
-}
+  }
 
-#gn-brand-navbar a {
+  #gn-brand-navbar a {
     color: #1a3f6f !important;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 600;
     font-size: 0.875rem;
     transition: color 0.2s;
-}
+  }
 
-#gn-brand-navbar a:hover {
-    color: #E87722 !important;
+  #gn-brand-navbar a:hover {
+    color: #e87722 !important;
     text-decoration: none;
-}
+  }
 
-/* Ocultar menú izquierdo y search bar del navbar */
-#gn-brand-navbar .gn-brand-navbar-left-menu-container,
-#gn-brand-navbar .gn-search-bar {
+  /* Ocultar menú izquierdo y search bar del navbar */
+  #gn-brand-navbar .gn-brand-navbar-left-menu-container,
+  #gn-brand-navbar .gn-search-bar {
     display: none !important;
-}
+  }
 
-/* Register / Sign in: solo visible en desktop */
-#crisol-auth-btns {
+  /* Register / Sign in: solo visible en desktop */
+  #crisol-auth-btns {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-}
+  }
 
-@media (max-width: 600px) {
+  @media (max-width: 600px) {
     #crisol-auth-btns {
-        display: none !important;
+      display: none !important;
     }
-}
+  }
 
-/* Botones navbar */
-#gn-brand-navbar .btn {
+  /* Botones navbar */
+  #gn-brand-navbar .btn {
     background-color: #1a3f6f !important;
     border: none !important;
     color: #ffffff !important;
@@ -86,128 +98,146 @@ body.msgapi {
     font-weight: 600;
     padding: 0.35rem 0.9rem;
     transition: background-color 0.2s;
-}
+  }
 
-#gn-brand-navbar .btn:hover {
+  #gn-brand-navbar .btn:hover {
     background-color: #2a5f8f !important;
-}
+  }
 
-/* ── Hero ── */
-#gn-hero {
-    background-image: url('/static/img/paisaje_crisol.jpg');
+  /* ── Hero ── */
+  #gn-hero {
+    background-image: url("/static/img/paisaje_crisol.jpg");
     background-size: cover;
     background-position: center 40%;
     background-repeat: no-repeat;
     position: relative;
     min-height: 440px;
-}
+  }
 
-#gn-hero::before {
-    content: '';
+  #gn-hero::before {
+    content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        to bottom,
-        rgba(10,30,60,0.75) 0%,
-        rgba(20,50,90,0.68) 60%,
-        rgba(10,30,60,0.80) 100%
+      to bottom,
+      rgba(10, 30, 60, 0.75) 0%,
+      rgba(20, 50, 90, 0.68) 60%,
+      rgba(10, 30, 60, 0.8) 100%
     );
     z-index: 1;
-}
+  }
 
-#gn-hero .jumbotron {
+  #gn-hero .jumbotron {
     position: relative;
     z-index: 2;
     background: transparent !important;
     text-align: center;
     padding: 5rem 1.5rem 3.5rem;
-}
+  }
 
-#gn-hero .jumbotron h1 {
-    font-family: 'Montserrat', sans-serif !important;
+  #gn-hero .jumbotron h1 {
+    font-family: "Montserrat", sans-serif !important;
     font-size: 2.8rem;
     font-weight: 800;
     color: #ffffff;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     margin-bottom: 0.6rem;
     letter-spacing: 0.02em;
-}
+  }
 
-#gn-hero .jumbotron h1 .highlight { color: #E87722; }
+  #gn-hero .jumbotron h1 .highlight {
+    color: #e87722;
+  }
 
-#gn-hero .jumbotron p.hero-subtitle {
-    font-family: 'Open Sans', sans-serif;
+  #gn-hero .jumbotron p.hero-subtitle {
+    font-family: "Open Sans", sans-serif;
     font-size: 1rem;
-    color: rgba(255,255,255,0.88);
+    color: rgba(255, 255, 255, 0.88);
     font-weight: 300;
     margin: 0 auto 2rem;
     max-width: 560px;
-}
+  }
 
-/* Barra de búsqueda */
-.gn-hero-search {
+  /* Barra de búsqueda */
+  .gn-hero-search {
     max-width: 680px;
     margin: 0 auto;
     display: flex;
     border-radius: 50px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-}
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
 
-.gn-hero-search input {
+  .gn-hero-search input {
     flex: 1;
-    min-width: 0;         /* evita que se desborde en mobile */
+    min-width: 0; /* evita que se desborde en mobile */
     padding: 0.9rem 1.2rem;
     font-size: 1rem;
     border: none;
     outline: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: #2c3e50;
     background: #ffffff;
-}
+  }
 
-.gn-hero-search button {
-    flex-shrink: 0;       /* nunca se achica */
-    background-color: #E87722;
+  .gn-hero-search button {
+    flex-shrink: 0; /* nunca se achica */
+    background-color: #e87722;
     border: none;
     padding: 0.9rem 1.4rem;
     cursor: pointer;
     color: #ffffff;
     font-size: 1rem;
     transition: background-color 0.2s;
-}
+  }
 
-.gn-hero-search button:hover { background-color: #C45E0A; }
+  .gn-hero-search button:hover {
+    background-color: #c45e0a;
+  }
 
-@media (max-width: 480px) {
-    #gn-hero .jumbotron h1 { font-size: 2rem; }
-    #gn-hero .jumbotron { padding: 4rem 1rem 2.5rem; }
-    .gn-hero-search input { padding: 0.8rem 1rem; font-size: 0.9rem; }
-    .gn-hero-search button { padding: 0.8rem 1.1rem; font-size: 0.9rem; }
-}
+  @media (max-width: 480px) {
+    #gn-hero .jumbotron h1 {
+      font-size: 2rem;
+    }
+    #gn-hero .jumbotron {
+      padding: 4rem 1rem 2.5rem;
+    }
+    .gn-hero-search input {
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+    }
+    .gn-hero-search button {
+      padding: 0.8rem 1.1rem;
+      font-size: 0.9rem;
+    }
+  }
 
-/* ── Cards ── */
-.gn-card, .gn-resource-card {
+  /* ── Cards ── */
+  .gn-card,
+  .gn-resource-card {
     background-color: #ffffff !important;
     border: 1px solid #e0e4e8 !important;
     border-radius: 10px !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
-    transition: transform 0.2s, box-shadow 0.2s !important;
-}
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s !important;
+  }
 
-.gn-card:hover, .gn-resource-card:hover {
+  .gn-card:hover,
+  .gn-resource-card:hover {
     transform: translateY(-3px) !important;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
     border-color: #4a8fc0 !important;
-}
+  }
 
-/* ── Footer — nunca fixed ── */
-/* Sobreescribir position:fixed del CSS nativo de GeoNode (.msgapi .gn-footer) */
-.msgapi .gn-footer,
-.gn-footer,
-body .gn-footer {
+  /* ── Footer — nunca fixed ── */
+  /* Sobreescribir position:fixed del CSS nativo de GeoNode (.msgapi .gn-footer) */
+  .msgapi .gn-footer,
+  .gn-footer,
+  body .gn-footer {
     background-color: #0d2a4a !important;
-    border-top: 3px solid #E87722 !important;
+    border-top: 3px solid #e87722 !important;
     position: static !important;
     bottom: auto !important;
     left: auto !important;
@@ -217,104 +247,154 @@ body .gn-footer {
     padding: 0 !important;
     z-index: auto !important;
     align-items: unset !important;
-}
+  }
 
-/* Anular el ul flex del CSS nativo de GeoNode */
-.msgapi .gn-footer ul,
-.gn-footer ul,
-body .gn-footer ul {
+  /* Anular el ul flex del CSS nativo de GeoNode */
+  .msgapi .gn-footer ul,
+  .gn-footer ul,
+  body .gn-footer ul {
     display: block !important;
     margin: 0 !important;
     padding: 0 !important;
     list-style: none !important;
-}
+  }
 
-.msgapi .gn-footer-placeholder,
-.gn-footer-placeholder { display: none !important; }
-
-/* ── Ocultar footer en visores de datasets, mapas y documentos ── */
-.page-dataset-viewer .gn-footer,
-.page-map-viewer .gn-footer,
-.page-document-viewer .gn-footer,
-.page-geostory-viewer .gn-footer,
-body.page-dataset-viewer .gn-footer,
-body.page-map-viewer .gn-footer {
+  .msgapi .gn-footer-placeholder,
+  .gn-footer-placeholder {
     display: none !important;
-}
+  }
 
-.gn-footer a {
+  /* ── Ocultar footer en visores de datasets, mapas y documentos ── */
+  .page-dataset-viewer .gn-footer,
+  .page-map-viewer .gn-footer,
+  .page-document-viewer .gn-footer,
+  .page-geostory-viewer .gn-footer,
+  body.page-dataset-viewer .gn-footer,
+  body.page-map-viewer .gn-footer {
+    display: none !important;
+  }
+
+  .gn-footer a {
     color: #cbd5e0 !important;
     font-size: 0.85rem;
     transition: color 0.2s;
-}
+  }
 
-.gn-footer a:hover { color: #E87722 !important; }
+  .gn-footer a:hover {
+    color: #e87722 !important;
+  }
 
-/* ── Scrollbar ── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f4f6f8; }
-::-webkit-scrollbar-thumb { background: #4a8fc0; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #E87722; }
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f4f6f8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #4a8fc0;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e87722;
+  }
 
-::selection { background: rgba(232,119,34,0.2); color: #2c3e50; }
+  ::selection {
+    background: rgba(232, 119, 34, 0.2);
+    color: #2c3e50;
+  }
 </style>
 
 <script>
-(function fixFooter() {
+  (function fixFooter() {
     function applyFix() {
-        var footer = document.querySelector('.gn-footer');
-        if (footer) {
-            footer.style.setProperty('position', 'static', 'important');
-            footer.style.setProperty('bottom', 'auto', 'important');
-            footer.style.setProperty('left', 'auto', 'important');
-            footer.style.setProperty('right', 'auto', 'important');
-            footer.style.setProperty('width', '100%', 'important');
-            footer.style.setProperty('z-index', 'auto', 'important');
-        }
-        var placeholder = document.querySelector('.gn-footer-placeholder');
-        if (placeholder) {
-            placeholder.style.setProperty('display', 'none', 'important');
-        }
+      var footer = document.querySelector(".gn-footer");
+      if (footer) {
+        footer.style.setProperty("position", "static", "important");
+        footer.style.setProperty("bottom", "auto", "important");
+        footer.style.setProperty("left", "auto", "important");
+        footer.style.setProperty("right", "auto", "important");
+        footer.style.setProperty("width", "100%", "important");
+        footer.style.setProperty("z-index", "auto", "important");
+      }
+      var placeholder = document.querySelector(".gn-footer-placeholder");
+      if (placeholder) {
+        placeholder.style.setProperty("display", "none", "important");
+      }
     }
     function isViewerPage() {
-        /* Detectar por hash (SPA: /catalogue/#/dataset/1) */
-        var hash = window.location.hash || '';
-        var pathname = window.location.pathname || '';
-        var hashPatterns = ['/dataset/', '/map/', '/document/', '/geostory/', '/metadata/', '/edit', '/replace', '/upload'];
-        var pathPatterns = ['/datasets/', '/maps/', '/documents/', '/geostories/'];
-        var inHash = hashPatterns.some(function(p){ return hash.indexOf(p) > -1; });
-        var inPath = pathPatterns.some(function(p){ return pathname.indexOf(p) > -1; });
-        /* Detectar por clases del body */
-        var viewerClasses = ['page-dataset-viewer','page-map-viewer','page-document-viewer','page-geostory-viewer'];
-        var inBody = viewerClasses.some(function(c){ return document.body.classList.contains(c); });
-        return inHash || inPath || inBody;
+      /* Detectar por hash (SPA: /catalogue/#/dataset/1) */
+      var hash = window.location.hash || "";
+      var pathname = window.location.pathname || "";
+      var hashPatterns = [
+        "/dataset/",
+        "/map/",
+        "/document/",
+        "/geostory/",
+        "/metadata/",
+        "/edit",
+        "/replace",
+        "/upload",
+      ];
+      var pathPatterns = [
+        "/datasets/",
+        "/maps/",
+        "/documents/",
+        "/geostories/",
+      ];
+      var inHash = hashPatterns.some(function (p) {
+        return hash.indexOf(p) > -1;
+      });
+      var inPath = pathPatterns.some(function (p) {
+        return pathname.indexOf(p) > -1;
+      });
+      /* Detectar por clases del body */
+      var viewerClasses = [
+        "page-dataset-viewer",
+        "page-map-viewer",
+        "page-document-viewer",
+        "page-geostory-viewer",
+      ];
+      var inBody = viewerClasses.some(function (c) {
+        return document.body.classList.contains(c);
+      });
+      return inHash || inPath || inBody;
     }
 
     function hideFooterInViewer() {
-        var footer = document.querySelector('.gn-footer');
-        if (!footer) return;
-        if (isViewerPage()) {
-            footer.style.setProperty('display', 'none', 'important');
-        } else {
-            /* Restaurar en páginas normales */
-            footer.style.removeProperty('display');
-        }
+      var footer = document.querySelector(".gn-footer");
+      if (!footer) return;
+      if (isViewerPage()) {
+        footer.style.setProperty("display", "none", "important");
+      } else {
+        /* Restaurar en páginas normales */
+        footer.style.removeProperty("display");
+      }
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener("DOMContentLoaded", function () {
+      applyFix();
+      hideFooterInViewer();
+      /* Escuchar cambios de hash (navegación SPA) */
+      window.addEventListener("hashchange", hideFooterInViewer);
+      window.addEventListener("popstate", hideFooterInViewer);
+      var observer = new MutationObserver(function () {
         applyFix();
         hideFooterInViewer();
-        /* Escuchar cambios de hash (navegación SPA) */
-        window.addEventListener('hashchange', hideFooterInViewer);
-        window.addEventListener('popstate', hideFooterInViewer);
-        var observer = new MutationObserver(function() {
-            applyFix();
-            hideFooterInViewer();
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 300);
-        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 1000);
-        setTimeout(function(){ applyFix(); hideFooterInViewer(); }, 2500);
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+      setTimeout(function () {
+        applyFix();
+        hideFooterInViewer();
+      }, 300);
+      setTimeout(function () {
+        applyFix();
+        hideFooterInViewer();
+      }, 1000);
+      setTimeout(function () {
+        applyFix();
+        hideFooterInViewer();
+      }, 2500);
     });
-})();
+  })();
 </script>
