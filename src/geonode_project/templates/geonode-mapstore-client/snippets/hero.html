@@ -805,43 +805,67 @@
 
 <script>
   (function () {
-    var categories = [
-      "fibra_optica",
-      "aspecto_academico",
-      "deportes",
-      "edificios",
-      "estadistica",
-      "forestales",
-      "infraestructura",
-      "mapuncu_2022",
-      "mapuncu_2023",
-      "mapuncu_2024",
-      "museo_virtual",
-      "salud",
-      "servicios_universitarios",
-      "turismo",
-    ];
+    function showBadge(cat, n) {
+      if (n > 0) {
+        var el = document.getElementById("cnt-" + cat);
+        if (el) {
+          el.textContent = n;
+          el.style.display = "flex";
+        }
+      }
+    }
 
-    categories.forEach(function (cat) {
-      fetch(
-        "/api/v2/resources/?filter{category.identifier}=" +
-          cat +
-          "&page_size=0",
-      )
-        .then(function (r) {
-          return r.json();
-        })
-        .then(function (d) {
-          var n = d.total || 0;
-          if (n > 0) {
-            var el = document.getElementById("cnt-" + cat);
-            if (el) {
-              el.textContent = n;
-              el.style.display = "flex";
-            }
-          }
-        })
-        .catch(function () {});
-    });
+    /* Intento 1: una sola llamada con facets (GeoNode v5) */
+    fetch("/api/v2/resources/?page_size=0&include[]=facets")
+      .then(function (r) {
+        return r.json();
+      })
+      .then(function (d) {
+        var facets = d.facets || {};
+        /* GeoNode v5 puede devolver facets.category como objeto {identifier: count} */
+        var catFacet = facets.category || facets["category.identifier"] || null;
+        if (catFacet && typeof catFacet === "object") {
+          Object.keys(catFacet).forEach(function (k) {
+            showBadge(k, catFacet[k]);
+          });
+          return; /* éxito, no hace falta más */
+        }
+        /* Intento 2: si facets no trajo datos, hacer 14 llamadas en paralelo */
+        fallback();
+      })
+      .catch(fallback);
+
+    function fallback() {
+      var cats = [
+        "fibra_optica",
+        "aspecto_academico",
+        "deportes",
+        "edificios",
+        "estadistica",
+        "forestales",
+        "infraestructura",
+        "mapuncu_2022",
+        "mapuncu_2023",
+        "mapuncu_2024",
+        "museo_virtual",
+        "salud",
+        "servicios_universitarios",
+        "turismo",
+      ];
+      cats.forEach(function (cat) {
+        fetch(
+          "/api/v2/resources/?filter{category.identifier}=" +
+            cat +
+            "&page_size=0",
+        )
+          .then(function (r) {
+            return r.json();
+          })
+          .then(function (d) {
+            showBadge(cat, d.total || 0);
+          })
+          .catch(function () {});
+      });
+    }
   })();
 </script>
