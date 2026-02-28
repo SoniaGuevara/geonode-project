@@ -263,6 +263,14 @@
     display: none !important;
   }
 
+  /* ── Fix paginador flotante en home ── */
+  .ms-main-colors._padding-tb-sm.ms-flex-box._flex._flex-center-h._flex-center-v,
+  ul.custom.pagination,
+  [class*="pagination"] {
+    position: static !important;
+    bottom: auto !important;
+  }
+
   /* ── Ocultar footer en visores de datasets, mapas y documentos ── */
   .page-dataset-viewer .gn-footer,
   .page-map-viewer .gn-footer,
