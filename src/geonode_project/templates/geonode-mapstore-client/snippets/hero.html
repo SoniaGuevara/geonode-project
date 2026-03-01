@@ -4,7 +4,7 @@
   <div class="jumbotron">
     <div class="gn-hero-description">
       {% if not custom_theme.jumbotron_welcome_hide %}
-      <h1><span class="highlight">CRISOL</span> UNCUYO</h1>
+      <h1><span class="highlight">Geoportal 5.0</span> UNCUYO</h1>
       <p class="hero-subtitle">
         Infraestructura de Datos Espaciales de la Universidad Nacional de Cuyo.
       </p>
@@ -53,8 +53,8 @@
     <div
       style="
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 0.75rem;
       "
       id="crisol-cat-grid"
     >
@@ -65,37 +65,39 @@
         data-cat="fibra_optica"
       >
         <div class="crisol-cat-card">
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 32 Q20 10 32 32 Q44 54 56 32"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linecap="round"
+                fill="none"
+              />
+              <path
+                d="M8 22 Q20 0 32 22 Q44 44 56 22"
+                stroke="#1a3f6f"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+                opacity="0.4"
+              />
+              <path
+                d="M8 42 Q20 20 32 42 Q44 64 56 42"
+                stroke="#1a3f6f"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+                opacity="0.4"
+              />
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Fibra Óptica</span></div>
           <div class="crisol-cat-badge" id="cnt-fibra_optica"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 32 Q20 10 32 32 Q44 54 56 32"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linecap="round"
-              fill="none"
-            />
-            <path
-              d="M8 22 Q20 0 32 22 Q44 44 56 22"
-              stroke="#1a3f6f"
-              stroke-width="2"
-              stroke-linecap="round"
-              fill="none"
-              opacity="0.4"
-            />
-            <path
-              d="M8 42 Q20 20 32 42 Q44 64 56 42"
-              stroke="#1a3f6f"
-              stroke-width="2"
-              stroke-linecap="round"
-              fill="none"
-              opacity="0.4"
-            />
-          </svg>
-          <span>Fibra Óptica</span>
         </div>
       </a>
 
@@ -106,38 +108,40 @@
         data-cat="aspecto_academico"
       >
         <div class="crisol-cat-card">
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 8 L56 20 L32 32 L8 20 Z"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <path
+                d="M20 26 L20 42 Q32 50 44 42 L44 26"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linecap="round"
+                fill="none"
+              />
+              <line
+                x1="56"
+                y1="20"
+                x2="56"
+                y2="36"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <circle cx="56" cy="38" r="2" fill="#1a3f6f" />
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Aspecto Académico</span></div>
           <div class="crisol-cat-badge" id="cnt-aspecto_academico"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M32 8 L56 20 L32 32 L8 20 Z"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linejoin="round"
-              fill="none"
-            />
-            <path
-              d="M20 26 L20 42 Q32 50 44 42 L44 26"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linecap="round"
-              fill="none"
-            />
-            <line
-              x1="56"
-              y1="20"
-              x2="56"
-              y2="36"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-            <circle cx="56" cy="38" r="2" fill="#1a3f6f" />
-          </svg>
-          <span>Aspecto Académico</span>
         </div>
       </a>
 
@@ -148,33 +152,35 @@
         data-cat="deportes"
       >
         <div class="crisol-cat-card">
-          <div class="crisol-cat-badge" id="cnt-deportes"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M32 8 L36 20 L50 20 L39 28 L43 42 L32 34 L21 42 L25 28 L14 20 L28 20 Z"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linejoin="round"
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
               fill="none"
-            />
-            <path
-              d="M24 48 L40 48"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-            <path
-              d="M28 54 L36 54"
-              stroke="#1a3f6f"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-          <span>Deportes</span>
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 8 L36 20 L50 20 L39 28 L43 42 L32 34 L21 42 L25 28 L14 20 L28 20 Z"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <path
+                d="M24 48 L40 48"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <path
+                d="M28 54 L36 54"
+                stroke="#1a3f6f"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Deportes</span></div>
+          <div class="crisol-cat-badge" id="cnt-deportes"></div>
         </div>
       </a>
 
@@ -185,65 +191,67 @@
         data-cat="edificios"
       >
         <div class="crisol-cat-card">
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="12"
+                y="20"
+                width="40"
+                height="36"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <path
+                d="M12 20 L32 8 L52 20"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <rect
+                x="22"
+                y="36"
+                width="8"
+                height="20"
+                stroke="#1a3f6f"
+                stroke-width="2"
+                fill="none"
+              />
+              <rect
+                x="34"
+                y="36"
+                width="8"
+                height="12"
+                stroke="#1a3f6f"
+                stroke-width="2"
+                fill="none"
+              />
+              <line
+                x1="20"
+                y1="28"
+                x2="28"
+                y2="28"
+                stroke="#1a3f6f"
+                stroke-width="2"
+              />
+              <line
+                x1="36"
+                y1="28"
+                x2="44"
+                y2="28"
+                stroke="#1a3f6f"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Edificios</span></div>
           <div class="crisol-cat-badge" id="cnt-edificios"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="12"
-              y="20"
-              width="40"
-              height="36"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linejoin="round"
-              fill="none"
-            />
-            <path
-              d="M12 20 L32 8 L52 20"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linejoin="round"
-              fill="none"
-            />
-            <rect
-              x="22"
-              y="36"
-              width="8"
-              height="20"
-              stroke="#1a3f6f"
-              stroke-width="2"
-              fill="none"
-            />
-            <rect
-              x="34"
-              y="36"
-              width="8"
-              height="12"
-              stroke="#1a3f6f"
-              stroke-width="2"
-              fill="none"
-            />
-            <line
-              x1="20"
-              y1="28"
-              x2="28"
-              y2="28"
-              stroke="#1a3f6f"
-              stroke-width="2"
-            />
-            <line
-              x1="36"
-              y1="28"
-              x2="44"
-              y2="28"
-              stroke="#1a3f6f"
-              stroke-width="2"
-            />
-          </svg>
-          <span>Edificios</span>
         </div>
       </a>
 
@@ -254,58 +262,60 @@
         data-cat="estadistica"
       >
         <div class="crisol-cat-card">
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="8"
+                y="36"
+                width="10"
+                height="20"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                fill="none"
+              />
+              <rect
+                x="22"
+                y="24"
+                width="10"
+                height="32"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                fill="none"
+              />
+              <rect
+                x="36"
+                y="14"
+                width="10"
+                height="42"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                fill="none"
+              />
+              <rect
+                x="50"
+                y="30"
+                width="6"
+                height="26"
+                stroke="#1a3f6f"
+                stroke-width="2"
+                fill="none"
+              />
+              <line
+                x1="6"
+                y1="56"
+                x2="58"
+                y2="56"
+                stroke="#1a3f6f"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Estadística</span></div>
           <div class="crisol-cat-badge" id="cnt-estadistica"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="8"
-              y="36"
-              width="10"
-              height="20"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              fill="none"
-            />
-            <rect
-              x="22"
-              y="24"
-              width="10"
-              height="32"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              fill="none"
-            />
-            <rect
-              x="36"
-              y="14"
-              width="10"
-              height="42"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              fill="none"
-            />
-            <rect
-              x="50"
-              y="30"
-              width="6"
-              height="26"
-              stroke="#1a3f6f"
-              stroke-width="2"
-              fill="none"
-            />
-            <line
-              x1="6"
-              y1="56"
-              x2="58"
-              y2="56"
-              stroke="#1a3f6f"
-              stroke-width="2"
-            />
-          </svg>
-          <span>Estadística</span>
         </div>
       </a>
 
@@ -316,30 +326,32 @@
         data-cat="forestales"
       >
         <div class="crisol-cat-card">
-          <div class="crisol-cat-badge" id="cnt-forestales"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M32 8 L48 30 L38 30 L52 50 L12 50 L26 30 L16 30 Z"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linejoin="round"
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
               fill="none"
-            />
-            <line
-              x1="32"
-              y1="50"
-              x2="32"
-              y2="58"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-          </svg>
-          <span>Forestales</span>
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 8 L48 30 L38 30 L52 50 L12 50 L26 30 L16 30 Z"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <line
+                x1="32"
+                y1="50"
+                x2="32"
+                y2="58"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Forestales</span></div>
+          <div class="crisol-cat-badge" id="cnt-forestales"></div>
         </div>
       </a>
 
@@ -350,58 +362,60 @@
         data-cat="infraestructura"
       >
         <div class="crisol-cat-card">
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="8"
+                y="8"
+                width="20"
+                height="20"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                fill="none"
+              />
+              <rect
+                x="36"
+                y="8"
+                width="20"
+                height="20"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                fill="none"
+              />
+              <rect
+                x="8"
+                y="36"
+                width="20"
+                height="20"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                fill="none"
+              />
+              <rect
+                x="36"
+                y="36"
+                width="20"
+                height="20"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                fill="none"
+              />
+              <circle
+                cx="32"
+                cy="32"
+                r="6"
+                stroke="#E87722"
+                stroke-width="2.5"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Infraestructura</span></div>
           <div class="crisol-cat-badge" id="cnt-infraestructura"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="8"
-              y="8"
-              width="20"
-              height="20"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              fill="none"
-            />
-            <rect
-              x="36"
-              y="8"
-              width="20"
-              height="20"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              fill="none"
-            />
-            <rect
-              x="8"
-              y="36"
-              width="20"
-              height="20"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              fill="none"
-            />
-            <rect
-              x="36"
-              y="36"
-              width="20"
-              height="20"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              fill="none"
-            />
-            <circle
-              cx="32"
-              cy="32"
-              r="6"
-              stroke="#E87722"
-              stroke-width="2.5"
-              fill="none"
-            />
-          </svg>
-          <span>Infraestructura</span>
         </div>
       </a>
 
@@ -412,47 +426,49 @@
         data-cat="mapuncu_2022"
       >
         <div class="crisol-cat-card">
-          <div class="crisol-cat-badge" id="cnt-mapuncu_2022"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 16 L24 10 L40 18 L56 10 L56 50 L40 56 L24 48 L8 54 Z"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linejoin="round"
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
               fill="none"
-            />
-            <line
-              x1="24"
-              y1="10"
-              x2="24"
-              y2="48"
-              stroke="#1a3f6f"
-              stroke-width="2"
-            />
-            <line
-              x1="40"
-              y1="18"
-              x2="40"
-              y2="56"
-              stroke="#1a3f6f"
-              stroke-width="2"
-            />
-            <text
-              x="14"
-              y="38"
-              font-size="9"
-              fill="#1a3f6f"
-              font-family="sans-serif"
-              font-weight="bold"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              22
-            </text>
-          </svg>
-          <span>Mapuncu 2022</span>
+              <path
+                d="M8 16 L24 10 L40 18 L56 10 L56 50 L40 56 L24 48 L8 54 Z"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <line
+                x1="24"
+                y1="10"
+                x2="24"
+                y2="48"
+                stroke="#1a3f6f"
+                stroke-width="2"
+              />
+              <line
+                x1="40"
+                y1="18"
+                x2="40"
+                y2="56"
+                stroke="#1a3f6f"
+                stroke-width="2"
+              />
+              <text
+                x="14"
+                y="38"
+                font-size="9"
+                fill="#1a3f6f"
+                font-family="sans-serif"
+                font-weight="bold"
+              >
+                22
+              </text>
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Mapuncu 2022</span></div>
+          <div class="crisol-cat-badge" id="cnt-mapuncu_2022"></div>
         </div>
       </a>
 
@@ -463,48 +479,50 @@
         data-cat="mapuncu_2023"
       >
         <div class="crisol-cat-card">
-          <div class="crisol-cat-badge" id="cnt-mapuncu_2023"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 16 L24 10 L40 18 L56 10 L56 50 L40 56 L24 48 L8 54 Z"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linejoin="round"
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
               fill="none"
-            />
-            <line
-              x1="24"
-              y1="10"
-              x2="24"
-              y2="48"
-              stroke="#1a3f6f"
-              stroke-width="2"
-            />
-            <line
-              x1="40"
-              y1="18"
-              x2="40"
-              y2="56"
-              stroke="#1a3f6f"
-              stroke-width="2"
-            />
-            <circle cx="46" cy="22" r="5" fill="#E87722" />
-            <text
-              x="14"
-              y="38"
-              font-size="9"
-              fill="#1a3f6f"
-              font-family="sans-serif"
-              font-weight="bold"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              23
-            </text>
-          </svg>
-          <span>Mapuncu 2023</span>
+              <path
+                d="M8 16 L24 10 L40 18 L56 10 L56 50 L40 56 L24 48 L8 54 Z"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <line
+                x1="24"
+                y1="10"
+                x2="24"
+                y2="48"
+                stroke="#1a3f6f"
+                stroke-width="2"
+              />
+              <line
+                x1="40"
+                y1="18"
+                x2="40"
+                y2="56"
+                stroke="#1a3f6f"
+                stroke-width="2"
+              />
+              <circle cx="46" cy="22" r="5" fill="#E87722" />
+              <text
+                x="14"
+                y="38"
+                font-size="9"
+                fill="#1a3f6f"
+                font-family="sans-serif"
+                font-weight="bold"
+              >
+                23
+              </text>
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Mapuncu 2023</span></div>
+          <div class="crisol-cat-badge" id="cnt-mapuncu_2023"></div>
         </div>
       </a>
 
@@ -515,53 +533,55 @@
         data-cat="mapuncu_2024"
       >
         <div class="crisol-cat-card">
-          <div class="crisol-cat-badge" id="cnt-mapuncu_2024"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 16 L24 10 L40 18 L56 10 L56 50 L40 56 L24 48 L8 54 Z"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linejoin="round"
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
               fill="none"
-            />
-            <line
-              x1="24"
-              y1="10"
-              x2="24"
-              y2="48"
-              stroke="#1a3f6f"
-              stroke-width="2"
-            />
-            <line
-              x1="40"
-              y1="18"
-              x2="40"
-              y2="56"
-              stroke="#1a3f6f"
-              stroke-width="2"
-            />
-            <path
-              d="M44 28 L44 18 Q44 14 48 14 Q52 14 52 18 Q52 24 44 32 Q36 24 36 18 Q36 14 40 14 Q44 14 44 18"
-              stroke="#E87722"
-              stroke-width="2"
-              fill="none"
-            />
-            <text
-              x="14"
-              y="38"
-              font-size="9"
-              fill="#1a3f6f"
-              font-family="sans-serif"
-              font-weight="bold"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              24
-            </text>
-          </svg>
-          <span>Mapuncu 2024</span>
+              <path
+                d="M8 16 L24 10 L40 18 L56 10 L56 50 L40 56 L24 48 L8 54 Z"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <line
+                x1="24"
+                y1="10"
+                x2="24"
+                y2="48"
+                stroke="#1a3f6f"
+                stroke-width="2"
+              />
+              <line
+                x1="40"
+                y1="18"
+                x2="40"
+                y2="56"
+                stroke="#1a3f6f"
+                stroke-width="2"
+              />
+              <path
+                d="M44 28 L44 18 Q44 14 48 14 Q52 14 52 18 Q52 24 44 32 Q36 24 36 18 Q36 14 40 14 Q44 14 44 18"
+                stroke="#E87722"
+                stroke-width="2"
+                fill="none"
+              />
+              <text
+                x="14"
+                y="38"
+                font-size="9"
+                fill="#1a3f6f"
+                font-family="sans-serif"
+                font-weight="bold"
+              >
+                24
+              </text>
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Mapuncu 2024</span></div>
+          <div class="crisol-cat-badge" id="cnt-mapuncu_2024"></div>
         </div>
       </a>
 
@@ -572,48 +592,50 @@
         data-cat="museo_virtual"
       >
         <div class="crisol-cat-card">
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="8"
+                y="24"
+                width="48"
+                height="32"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                fill="none"
+              />
+              <path
+                d="M8 24 L32 10 L56 24"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <rect
+                x="22"
+                y="34"
+                width="14"
+                height="10"
+                stroke="#1a3f6f"
+                stroke-width="2"
+                fill="none"
+              />
+              <line
+                x1="8"
+                y1="30"
+                x2="56"
+                y2="30"
+                stroke="#1a3f6f"
+                stroke-width="1.5"
+                opacity="0.4"
+              />
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Museo Virtual</span></div>
           <div class="crisol-cat-badge" id="cnt-museo_virtual"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="8"
-              y="24"
-              width="48"
-              height="32"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              fill="none"
-            />
-            <path
-              d="M8 24 L32 10 L56 24"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linejoin="round"
-              fill="none"
-            />
-            <rect
-              x="22"
-              y="34"
-              width="14"
-              height="10"
-              stroke="#1a3f6f"
-              stroke-width="2"
-              fill="none"
-            />
-            <line
-              x1="8"
-              y1="30"
-              x2="56"
-              y2="30"
-              stroke="#1a3f6f"
-              stroke-width="1.5"
-              opacity="0.4"
-            />
-          </svg>
-          <span>Museo Virtual</span>
         </div>
       </a>
 
@@ -624,29 +646,31 @@
         data-cat="salud"
       >
         <div class="crisol-cat-card">
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 52 Q10 38 10 24 Q10 14 20 12 Q26 12 32 20 Q38 12 44 12 Q54 14 54 24 Q54 38 32 52Z"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <polyline
+                points="14,32 22,32 26,22 30,42 34,28 38,36 42,32 50,32"
+                stroke="#E87722"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Salud</span></div>
           <div class="crisol-cat-badge" id="cnt-salud"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M32 52 Q10 38 10 24 Q10 14 20 12 Q26 12 32 20 Q38 12 44 12 Q54 14 54 24 Q54 38 32 52Z"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linejoin="round"
-              fill="none"
-            />
-            <polyline
-              points="14,32 22,32 26,22 30,42 34,28 38,36 42,32 50,32"
-              stroke="#E87722"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
-            />
-          </svg>
-          <span>Salud</span>
         </div>
       </a>
 
@@ -657,58 +681,62 @@
         data-cat="servicios_universitarios"
       >
         <div class="crisol-cat-card">
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="12"
+                y="28"
+                width="40"
+                height="28"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                fill="none"
+              />
+              <path
+                d="M12 28 L32 16 L52 28"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              <rect
+                x="24"
+                y="36"
+                width="8"
+                height="8"
+                rx="4"
+                stroke="#1a3f6f"
+                stroke-width="2.5"
+                fill="none"
+              />
+              <line
+                x1="28"
+                y1="44"
+                x2="28"
+                y2="56"
+                stroke="#1a3f6f"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              />
+              <line
+                x1="20"
+                y1="48"
+                x2="36"
+                y2="48"
+                stroke="#1a3f6f"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <div class="crisol-cat-texto">
+            <span>Servicios Universitarios</span>
+          </div>
           <div class="crisol-cat-badge" id="cnt-servicios_universitarios"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="12"
-              y="28"
-              width="40"
-              height="28"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              fill="none"
-            />
-            <path
-              d="M12 28 L32 16 L52 28"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              stroke-linejoin="round"
-              fill="none"
-            />
-            <rect
-              x="24"
-              y="36"
-              width="8"
-              height="8"
-              rx="4"
-              stroke="#1a3f6f"
-              stroke-width="2.5"
-              fill="none"
-            />
-            <line
-              x1="28"
-              y1="44"
-              x2="28"
-              y2="56"
-              stroke="#1a3f6f"
-              stroke-width="2.5"
-              stroke-linecap="round"
-            />
-            <line
-              x1="20"
-              y1="48"
-              x2="36"
-              y2="48"
-              stroke="#1a3f6f"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-          <span>Servicios Universitarios</span>
         </div>
       </a>
 
@@ -719,28 +747,30 @@
         data-cat="turismo"
       >
         <div class="crisol-cat-card">
+          <div class="crisol-cat-icono">
+            <svg
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 8 Q44 8 44 22 Q44 36 32 56 Q20 36 20 22 Q20 8 32 8Z"
+                stroke="#1a3f6f"
+                stroke-width="3"
+                fill="none"
+              />
+              <circle
+                cx="32"
+                cy="22"
+                r="6"
+                stroke="#1a3f6f"
+                stroke-width="2.5"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div class="crisol-cat-texto"><span>Turismo</span></div>
           <div class="crisol-cat-badge" id="cnt-turismo"></div>
-          <svg
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M32 8 Q44 8 44 22 Q44 36 32 56 Q20 36 20 22 Q20 8 32 8Z"
-              stroke="#1a3f6f"
-              stroke-width="3"
-              fill="none"
-            />
-            <circle
-              cx="32"
-              cy="22"
-              r="6"
-              stroke="#1a3f6f"
-              stroke-width="2.5"
-              fill="none"
-            />
-          </svg>
-          <span>Turismo</span>
         </div>
       </a>
     </div>
@@ -748,58 +778,89 @@
 </div>
 
 <style>
+  /* ── Cards de categorías ── */
   .crisol-cat-card {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 0.75rem;
-    padding: 1.25rem 0.75rem;
-    background: #ffffff;
+    gap: 0.875rem;
+    padding: 0.75rem 1rem;
+    background: #fff;
     border: 1px solid #e0e4e8;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
+    transition: all 0.18s;
+    text-align: left;
   }
 
   .crisol-cat-card:hover {
     border-color: #1a3f6f;
-    box-shadow: 0 4px 16px rgba(26, 63, 111, 0.15);
-    transform: translateY(-3px);
+    box-shadow: 0 2px 12px rgba(26, 63, 111, 0.12);
+    background: #f4f7fb;
   }
 
-  .crisol-cat-card svg {
-    width: 48px;
-    height: 48px;
+  /* Ícono */
+  .crisol-cat-icono {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    background: #eef2f8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.18s;
   }
 
-  .crisol-cat-card span {
+  .crisol-cat-icono svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .crisol-cat-card:hover .crisol-cat-icono {
+    background: #e87722;
+  }
+
+  .crisol-cat-card:hover .crisol-cat-icono svg * {
+    stroke: #fff !important;
+    fill: none !important;
+  }
+
+  .crisol-cat-card:hover .crisol-cat-icono svg [fill="#E87722"] {
+    fill: #fff !important;
+  }
+
+  /* Texto */
+  .crisol-cat-texto {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .crisol-cat-texto span {
     font-family: "Open Sans", sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: #1a3f6f;
     line-height: 1.3;
+    display: block;
   }
 
   /* Badge contador */
   .crisol-cat-badge {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: #1a3f6f;
+    flex-shrink: 0;
+    background: #e87722;
     color: #fff;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
-    min-width: 20px;
-    height: 20px;
-    border-radius: 10px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
     display: none;
     align-items: center;
     justify-content: center;
-    padding: 0 5px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 0 4px;
   }
 </style>
 
@@ -815,57 +876,35 @@
       }
     }
 
-    /* Intento 1: una sola llamada con facets (GeoNode v5) */
-    fetch("/api/v2/resources/?page_size=0&include[]=facets")
-      .then(function (r) {
-        return r.json();
-      })
-      .then(function (d) {
-        var facets = d.facets || {};
-        /* GeoNode v5 puede devolver facets.category como objeto {identifier: count} */
-        var catFacet = facets.category || facets["category.identifier"] || null;
-        if (catFacet && typeof catFacet === "object") {
-          Object.keys(catFacet).forEach(function (k) {
-            showBadge(k, catFacet[k]);
-          });
-          return; /* éxito, no hace falta más */
-        }
-        /* Intento 2: si facets no trajo datos, hacer 14 llamadas en paralelo */
-        fallback();
-      })
-      .catch(fallback);
-
-    function fallback() {
-      var cats = [
-        "fibra_optica",
-        "aspecto_academico",
-        "deportes",
-        "edificios",
-        "estadistica",
-        "forestales",
-        "infraestructura",
-        "mapuncu_2022",
-        "mapuncu_2023",
-        "mapuncu_2024",
-        "museo_virtual",
-        "salud",
-        "servicios_universitarios",
-        "turismo",
-      ];
-      cats.forEach(function (cat) {
-        fetch(
-          "/api/v2/resources/?filter{category.identifier}=" +
-            cat +
-            "&page_size=0",
-        )
-          .then(function (r) {
-            return r.json();
-          })
-          .then(function (d) {
-            showBadge(cat, d.total || 0);
-          })
-          .catch(function () {});
-      });
-    }
+    var cats = [
+      "fibra_optica",
+      "aspecto_academico",
+      "deportes",
+      "edificios",
+      "estadistica",
+      "forestales",
+      "infraestructura",
+      "mapuncu_2022",
+      "mapuncu_2023",
+      "mapuncu_2024",
+      "museo_virtual",
+      "salud",
+      "servicios_universitarios",
+      "turismo",
+    ];
+    cats.forEach(function (cat) {
+      fetch(
+        "/api/v2/resources/?filter{category.identifier}=" +
+          cat +
+          "&page_size=0",
+      )
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function (d) {
+          showBadge(cat, d.total || 0);
+        })
+        .catch(function () {});
+    });
   })();
 </script>
